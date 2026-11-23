@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { 
   Briefcase, 
   Flame, 
@@ -10,7 +10,6 @@ import {
   CheckCircle2, 
   Layers, 
   FileText,
-  MessageSquare,
   ShieldCheck
 } from 'lucide-react';
 import { 
@@ -22,16 +21,8 @@ import {
   TactileStamp, 
   PaperClip 
 } from './HandDrawn';
-import { playClick, playPop } from '../utils/sound';
 
 export default function Experience() {
-  const [expandedBrief, setExpandedBrief] = useState('taurus');
-
-  const handleToggleExpand = (id) => {
-    playClick();
-    setExpandedBrief(expandedBrief === id ? null : id);
-  };
-
   return (
     <section id="experience" className="py-12 sm:py-20 px-4 sm:px-6 lg:px-8 relative">
       <div className="max-w-5xl mx-auto">
@@ -122,28 +113,6 @@ export default function Experience() {
                       <span><strong>Objection Handling:</strong> Re-framed client hesitations on possession timelines and financing into clear risk-mitigated options, maintaining strong lead momentum.</span>
                     </li>
                   </ul>
-                </div>
-
-                {/* Behind the Pitch Drawer Toggle */}
-                <div className="pt-2">
-                  <button
-                    onClick={() => handleToggleExpand('taurus')}
-                    className="text-xs font-mono font-bold text-orange-900 bg-orange-50 hover:bg-orange-100 border border-orange-300 rounded-lg px-3 py-1.5 flex items-center gap-1.5 transition-colors"
-                  >
-                    <MessageSquare size={13} />
-                    <span>{expandedBrief === 'taurus' ? 'Hide Pitch Playbook ▲' : 'Open Inside-the-Pitch Playbook ▼'}</span>
-                  </button>
-
-                  {expandedBrief === 'taurus' && (
-                    <div className="mt-3 p-4 rounded-xl bg-[#FAF8F3] border border-[#E2DED5] text-xs space-y-2 animate-in fade-in duration-200">
-                      <p className="font-bold text-[#121212]">
-                        Tactical takeaway from Team Taurus:
-                      </p>
-                      <p className="text-stone-700 leading-relaxed">
-                        "High-ticket buyers don't buy square footage; they buy confidence in the person standing across from them. By greeting each family with customized comparative sheets and addressing their unasked questions first, their guard drops within the first 4 minutes."
-                      </p>
-                    </div>
-                  )}
                 </div>
               </div>
 
@@ -253,28 +222,6 @@ export default function Experience() {
                       <span><strong>Multi-Touch Cadence:</strong> Orchestrated email, phone, and WhatsApp sequences that achieved sustained response rates above industry benchmarks.</span>
                     </li>
                   </ul>
-                </div>
-
-                {/* Behind the Pitch Drawer Toggle */}
-                <div className="pt-2">
-                  <button
-                    onClick={() => handleToggleExpand('dublieu')}
-                    className="text-xs font-mono font-bold text-emerald-900 bg-emerald-50 hover:bg-emerald-100 border border-emerald-300 rounded-lg px-3 py-1.5 flex items-center gap-1.5 transition-colors"
-                  >
-                    <MessageSquare size={13} />
-                    <span>{expandedBrief === 'dublieu' ? 'Hide Cold Call Script ▲' : 'Open Cold Calling Strategy ▼'}</span>
-                  </button>
-
-                  {expandedBrief === 'dublieu' && (
-                    <div className="mt-3 p-4 rounded-xl bg-[#FAF8F3] border border-[#E2DED5] text-xs space-y-2 animate-in fade-in duration-200">
-                      <p className="font-bold text-[#121212]">
-                        Tactical outbound lesson from Dublieu:
-                      </p>
-                      <p className="text-stone-700 leading-relaxed">
-                        "Parents aren't buying an MUN conference ticket; they are investing in their child's confidence, public speaking articulation, and college CV. When you open with how this event transforms timid speakers into school debaters, the sale becomes a collaborative decision."
-                      </p>
-                    </div>
-                  )}
                 </div>
               </div>
 
