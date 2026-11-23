@@ -104,13 +104,8 @@ export default function Education() {
         
         {/* Section Header */}
         <div className="text-center mb-10 sm:mb-14">
-          <div className="inline-flex items-center gap-1.5 px-3 py-1 bg-white border border-[#121212] shadow-tactile rounded-full text-xs font-mono font-bold text-[#121212] mb-2.5">
-            <GraduationCap size={13} className="text-amber-600" />
-            <span>ACADEMIC & PROFESSIONAL CREDENTIALS</span>
-          </div>
-
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-[#121212] tracking-tight flex items-center justify-center gap-2">
-            <span>Stacked Index Cards</span>
+            <span>Education & Certifications</span>
             <DoodleSparkle className="w-7 h-7 text-[#1A1A1A] hidden sm:inline-block" strokeColor="#1A1A1A" />
           </h2>
 
@@ -119,7 +114,7 @@ export default function Education() {
           </div>
 
           <p className="font-hand text-lg sm:text-xl text-stone-600 mt-2 max-w-xl mx-auto">
-            Rigorous business training at IIM Bangalore paired with certified marketing specializations.
+            Business coursework at IIM Bangalore alongside specialized certifications in sales and marketing.
           </p>
         </div>
 

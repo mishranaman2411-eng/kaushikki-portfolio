@@ -63,7 +63,7 @@ export default function Footer() {
         {/* Bottom Bar */}
         <div className="pt-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs font-mono text-[#78716C]">
           <div className="flex items-center gap-1">
-            <span>© {new Date().getFullYear()} Koushhiki Roy. Crafted with tactile care.</span>
+            <span>© {new Date().getFullYear()} Koushhiki Roy • Kolkata, India</span>
           </div>
 
           <div className="flex items-center gap-4">
@@ -96,7 +96,7 @@ export default function Footer() {
         {/* Hand-drawn editorial signoff */}
         <div className="mt-6 text-center">
           <p className="font-hand text-base text-stone-500">
-            "Every cold call is an invitation to solve a problem."
+            Open to Summer 2027 & Off-Cycle Sales / Growth Internships.
           </p>
         </div>
 

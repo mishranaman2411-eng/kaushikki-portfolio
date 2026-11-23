@@ -42,7 +42,7 @@ Daily Stack:
 - Generative AI: Prompt engineering for research and creative ideation.
 
 Working Note:
-A good pitch isn't a speech. It is a conversation where the client discovers their own need before you even suggest the solution.
+Good selling isn't convincing someone to buy something they don't need. It's asking the right questions to understand their problem and knowing your product well enough to solve it.
 
 Contact: koushhikiroy@gmail.com | +91 898 1788 534`;
 
@@ -57,10 +57,6 @@ Contact: koushhikiroy@gmail.com | +91 898 1788 534`;
         
         {/* Section Header */}
         <div className="text-center mb-8 sm:mb-12">
-          <div className="inline-flex items-center gap-1.5 px-3 py-1 bg-neutral-100 border border-[#121212] rounded-full text-xs font-mono font-bold text-[#121212] mb-2.5">
-            <span>APPLE NOTES ENTRY</span>
-          </div>
-
           <h2 className="text-3xl sm:text-4xl font-black text-[#121212] tracking-tight flex items-center justify-center gap-2">
             <span>The About Me Memo</span>
             <DoodleSparkle className="w-6 h-6 text-[#1A1A1A] hidden sm:inline-block" strokeColor="#1A1A1A" />
@@ -71,7 +67,7 @@ Contact: koushhikiroy@gmail.com | +91 898 1788 534`;
           </div>
 
           <p className="font-hand text-lg text-stone-600 mt-2">
-            Personal notes, background, and operational approach.
+            Background, skills, and how I work.
           </p>
         </div>
 
@@ -141,7 +137,7 @@ Contact: koushhikiroy@gmail.com | +91 898 1788 534`;
               </p>
 
               <p>
-                I focus on consultative selling, outbound outreach, and hands-on digital marketing. Most people find cold outreach intimidating; I find it clarifying. When I am presenting to a client or picking up the phone, my focus is not on pitching harder—it is on uncovering what the buyer actually values, addressing their doubt directly, and building trust that lasts beyond a single transaction.
+                Most people hate cold calling; I actually enjoy it. Whether I'm on a discovery call or walking a buyer through a property, I don't rely on pushy scripts—I focus on figuring out what the buyer actually cares about and answering their concerns upfront.
               </p>
             </div>
 
@@ -271,7 +267,7 @@ Contact: koushhikiroy@gmail.com | +91 898 1788 534`;
                 Working Note
               </h3>
               <p className="italic text-stone-700">
-                "Selling is not persuading someone to buy something they do not need. It is asking the right questions so they can see their own problem clearly, and having the discipline and product knowledge to solve it."
+                "Good selling isn't convincing someone to buy something they don't need. It's asking the right questions to understand their problem and knowing your product well enough to solve it."
               </p>
             </div>
 

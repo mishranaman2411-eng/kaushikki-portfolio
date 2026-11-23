@@ -38,13 +38,8 @@ export default function Experience() {
         
         {/* Section Header */}
         <div className="text-center mb-10 sm:mb-14">
-          <div className="inline-flex items-center gap-1.5 px-3 py-1 bg-white border border-[#121212] shadow-tactile rounded-full text-xs font-mono font-bold text-[#121212] mb-2.5">
-            <Briefcase size={13} className="text-orange-600" />
-            <span>FIELD DOSSIER • SALES & MARKETING</span>
-          </div>
-
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-[#121212] tracking-tight flex items-center justify-center gap-2">
-            <span>Tactile Experience Briefs</span>
+            <span>Experience</span>
             <DoodleSparkle className="w-7 h-7 text-[#1A1A1A] hidden sm:inline-block" strokeColor="#1A1A1A" />
           </h2>
 
@@ -53,7 +48,7 @@ export default function Experience() {
           </div>
 
           <p className="font-hand text-lg sm:text-xl text-stone-600 mt-2 max-w-xl mx-auto">
-            Real clients, high-stakes pitching, and hundreds of outbound touchpoints.
+            Client pitching, outbound campaigns, and field sales.
           </p>
         </div>
 
@@ -104,7 +99,7 @@ export default function Experience() {
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 pt-6">
               <div className="lg:col-span-8 space-y-4">
                 <p className="text-sm sm:text-base text-[#282828] leading-relaxed">
-                  Stepped directly into the high-stakes arena of client sales at <strong className="font-bold text-[#121212]">Team Taurus</strong>. Handled one-on-one discovery and presentation walkthroughs for premium real estate buyer portfolios, with meticulous attention to detail on pricing, structural specifications, and long-term investment value.
+                  Handled one-on-one buyer walkthroughs and property pitches at Team Taurus, breaking down pricing, floor plans, and investment value for prospective homebuyers.
                 </p>
 
                 <div className="space-y-2.5 pt-1">
@@ -120,11 +115,11 @@ export default function Experience() {
                     </li>
                     <li className="flex items-start gap-2.5">
                       <CheckCircle2 size={16} className="text-emerald-600 flex-shrink-0 mt-0.5" />
-                      <span><strong>High-Fidelity Attention to Detail:</strong> Memorized complex project architectural blueprints, payment milestones, and statutory clearances to address buyer skepticism instantly.</span>
+                      <span><strong>Product & Blueprint Mastery:</strong> Memorized complex project architectural blueprints, payment milestones, and statutory clearances to address buyer skepticism instantly.</span>
                     </li>
                     <li className="flex items-start gap-2.5">
                       <CheckCircle2 size={16} className="text-emerald-600 flex-shrink-0 mt-0.5" />
-                      <span><strong>Consultative Objection Handling:</strong> Re-framed client hesitations on possession timelines and financing into clear risk-mitigated options, maintaining strong lead momentum.</span>
+                      <span><strong>Objection Handling:</strong> Re-framed client hesitations on possession timelines and financing into clear risk-mitigated options, maintaining strong lead momentum.</span>
                     </li>
                   </ul>
                 </div>
@@ -156,7 +151,7 @@ export default function Experience() {
               <div className="lg:col-span-4 bg-[#FAF8F5] rounded-2xl border-[1.5px] border-[#121212] p-4 sm:p-5 flex flex-col justify-between space-y-4">
                 <div>
                   <div className="font-mono text-[11px] font-bold uppercase text-[#625E56] border-b border-[#E2DED5] pb-1.5 mb-2.5 flex items-center justify-between">
-                    <span>Role Telemetry</span>
+                    <span>Overview</span>
                     <span className="text-emerald-600">Active</span>
                   </div>
 
@@ -235,7 +230,7 @@ export default function Experience() {
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 pt-6">
               <div className="lg:col-span-8 space-y-4">
                 <p className="text-sm sm:text-base text-[#282828] leading-relaxed">
-                  Owned cold outbound marketing at <strong className="font-bold text-[#121212]">Dublieu</strong> across high-energy youth leadership conferences, MUN delegations, and local business sponsorships. Executed structured phone cadences and tailored email pitches to engage discerning parents, educators, and enterprise partners.
+                  Ran outbound sales and sponsorship outreach at Dublieu for youth conferences and MUN events, pitching parents, schools, and local Kolkata businesses over phone, email, and WhatsApp.
                 </p>
 
                 <div className="space-y-2.5 pt-1">
@@ -287,7 +282,7 @@ export default function Experience() {
               <div className="lg:col-span-4 bg-[#FAF8F5] rounded-2xl border-[1.5px] border-[#121212] p-4 sm:p-5 flex flex-col justify-between space-y-4">
                 <div>
                   <div className="font-mono text-[11px] font-bold uppercase text-[#625E56] border-b border-[#E2DED5] pb-1.5 mb-2.5 flex items-center justify-between">
-                    <span>Campaign Telemetry</span>
+                    <span>Overview</span>
                     <span className="text-emerald-600">Completed</span>
                   </div>
 

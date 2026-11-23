@@ -66,12 +66,7 @@ export default function Hero({ onOpenContact }) {
             {/* Expressive Editorial Headline with Ink-Black Underline */}
             <div className="space-y-2">
               <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl font-black tracking-tight leading-[1.12] text-[#121212]">
-                High-touch pitch craft meets{' '}
-                <span className="relative inline-block">
-                  <span className="relative z-10 text-orange-950">digital sales</span>
-                  <span className="absolute left-0 bottom-1.5 w-full h-3 bg-amber-200 -rotate-1 rounded -z-0" />
-                </span>{' '}
-                growth.
+                B2B & B2C sales, outbound growth, and pitch strategy.
               </h1>
               <div className="w-56 sm:w-72 pt-1">
                 <DoodleUnderline className="w-full h-4 text-[#1A1A1A]" strokeColor="#1A1A1A" />
@@ -87,15 +82,7 @@ export default function Hero({ onOpenContact }) {
                   <DoodleUnderline className="w-full h-3 text-[#1A1A1A]" strokeColor="#1A1A1A" />
                 </span>
               </span>{' '}
-              — a digital marketing & sales strategist in the making. I bridge the gap between creative storytelling and high-stakes client closing, with{' '}
-              <span className="relative inline-block font-bold">
-                <span className="underline decoration-wavy decoration-orange-400">50+ live in-person pitches</span>
-              </span>{' '}
-              and{' '}
-              <span className="relative inline-block font-bold">
-                <span className="underline decoration-wavy decoration-emerald-500">200+ cold outreach conversions</span>
-              </span>{' '}
-              in the field.
+              — an IIM Bangalore BBA DBE student focused on sales and growth marketing. I’ve closed 200+ leads through cold outreach and delivered 50+ live client pitches across real estate and youth events.
             </p>
 
             {/* Tactile Key Metrics Ribbon with Looped Circles */}
@@ -263,7 +250,7 @@ export default function Hero({ onOpenContact }) {
                       <DoodleSparkle className="w-4 h-4 text-[#1A1A1A] inline-block" strokeColor="#1A1A1A" />
                     </p>
                     <p className="text-[11px] font-mono text-[#625E56] mt-0.5">
-                      Click card to see 3 core superpowers ↺
+                      Click card to flip ↺
                     </p>
                   </div>
                 </div>
@@ -310,14 +297,6 @@ export default function Hero({ onOpenContact }) {
                   </div>
                 </div>
               )}
-            </div>
-
-            {/* Doodled Arrow pointing to Apple Notes section */}
-            <div className="mt-6 flex items-center gap-2 text-stone-700">
-              <span className="font-hand text-sm font-bold">
-                Scroll for Apple Notes about widget
-              </span>
-              <DoodleArrow className="w-8 h-8 text-[#1A1A1A]" strokeColor="#1A1A1A" />
             </div>
 
           </div>
