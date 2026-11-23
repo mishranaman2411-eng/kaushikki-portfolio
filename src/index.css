@@ -177,6 +177,38 @@
 }
 
 
+/* ==============================================================
+   WINDING SVG PATHWAY TIMELINE
+   ============================================================== */
+.pathway-node {
+  opacity: 0.35;
+  transform: translateY(14px) scale(0.97);
+  transition: opacity 0.45s cubic-bezier(0.16, 1, 0.3, 1), transform 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.pathway-node.node-active {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+.tilted-box-right {
+  transform: rotate(2deg);
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.tilted-box-right:hover {
+  transform: rotate(0deg) translateY(-2px);
+  box-shadow: 4px 6px 0 0 #D94E1F;
+}
+
+.tilted-box-left {
+  transform: rotate(-2deg);
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.tilted-box-left:hover {
+  transform: rotate(0deg) translateY(-2px);
+  box-shadow: -4px 6px 0 0 #D94E1F;
+}
+
 /* Smooth custom scrollbar */
 ::-webkit-scrollbar {
   width: 9px;

@@ -1,109 +1,195 @@
-import React, { useState } from 'react';
+import React, { useEffect, useRef } from 'react';
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { 
   GraduationCap, 
+  BookOpen, 
   Award, 
-  Calendar, 
-  MapPin, 
-  CheckCircle, 
-  ExternalLink, 
-  Sparkles,
-  BookOpen,
-  BriefcaseBusiness,
-  Bot
+  BriefcaseBusiness, 
+  Compass, 
+  Bot 
 } from 'lucide-react';
-import { 
-  DoodleUnderline, 
-  DoodleSparkle, 
-  DoodleDivider, 
-  Sparkle 
-} from './HandDrawn';
-import { playClick, playPop } from '../utils/sound';
+import { DoodleUnderline, DoodleSparkle } from './HandDrawn';
 
 export default function Education() {
-  const [activeFilter, setActiveFilter] = useState('all');
+  const containerRef = useRef(null);
+  const desktopPathRef = useRef(null);
+  const mobilePathRef = useRef(null);
+  const nodeRefs = useRef([]);
 
-  const educationList = [
+  const stops = [
     {
-      institution: "Indian Institute of Management Bangalore (IIM Bangalore)",
-      degree: "Bachelor of Business Administration in Digital Business & Entrepreneurship (BBA DBE)",
-      period: "2026 – 2029",
-      location: "Bangalore, India",
-      tag: "Undergraduate • Top B-School",
-      status: "In Progress",
-      color: "bg-emerald-50 border-emerald-300 text-emerald-950",
-      accent: "text-emerald-800",
-      details: [
-        "Rigorous coursework in digital business models, consultative sales negotiation, corporate finance, and entrepreneurial ventures.",
-        "Hands-on case study approach solving real-world go-to-market and distribution challenges.",
-        "Developing analytical frameworks for digital customer acquisition, lifetime value, and brand strategy."
-      ]
+      number: "01",
+      titlePart1: "IIM",
+      titlePart2: "BANGALORE",
+      side: "right",
+      icon: GraduationCap,
+      tag: "2026 – 2029 • Bangalore",
+      degree: "BBA in Digital Business & Entrepreneurship (BBA DBE)",
+      desc: "Digital business models, sales negotiation, corporate finance & go-to-market strategy.",
     },
     {
-      institution: "Holy Mother’s Academy",
-      degree: "Higher Secondary Certificate (Class XII)",
-      period: "2026",
-      location: "Kolkata, India",
-      tag: "Senior Secondary",
-      status: "Graduated",
-      color: "bg-white border-[#121212] text-[#121212]",
-      accent: "text-amber-800",
-      details: [
-        "Focused academic curriculum strengthening analytical thinking, commerce, and communication foundations.",
-        "Active participation in speech, debate, and school cultural initiatives."
-      ]
+      number: "02",
+      titlePart1: "HOLY",
+      titlePart2: "MOTHER’S ACADEMY",
+      side: "left",
+      icon: BookOpen,
+      tag: "2026 • Kolkata",
+      degree: "Higher Secondary (Class XII)",
+      desc: "Commerce, analytical foundations, speech & debate.",
     },
     {
-      institution: "Delhi Public School Megacity (DPS Megacity)",
-      degree: "Secondary School Examination (Class X)",
-      period: "2023",
-      location: "Kolkata, India",
-      tag: "Foundational Secondary",
-      status: "Graduated",
-      color: "bg-white border-[#121212] text-[#121212]",
-      accent: "text-stone-800",
-      details: [
-        "Comprehensive holistic secondary schooling across languages, sciences, and humanities.",
-        "Early involvement in Model United Nations (MUN) events that sparked a passion for persuasive public speaking."
-      ]
-    }
-  ];
-
-  const certificationsList = [
-    {
-      title: "Clever Harvey Business Fellowships",
-      role: "Junior CEO • Junior CMO • Junior CFO",
-      issuer: "Clever Harvey",
-      tag: "Strategic Leadership & Finance",
-      icon: BriefcaseBusiness,
-      badgeColor: "bg-amber-100 text-amber-900 border-amber-300",
-      summary: "Three rigorous industry simulations solving strategic leadership crises, multi-channel marketing campaigns, and financial balance sheet forecasting."
-    },
-    {
-      title: "Diploma in Real Estate Marketing & Sales",
-      role: "Specialized Professional Certification",
-      issuer: "Industry Accredited",
-      tag: "High-Ticket Client Acquisition",
+      number: "03",
+      titlePart1: "DPS",
+      titlePart2: "MEGACITY",
+      side: "right",
       icon: Award,
-      badgeColor: "bg-orange-100 text-orange-900 border-orange-300",
-      summary: "Comprehensive practical study on luxury property positioning, client psychology, comparative market analysis, and high-value contract closing."
+      tag: "2023 • Kolkata",
+      degree: "Secondary School (Class X)",
+      desc: "Languages, sciences, humanities & early MUN public speaking.",
     },
     {
-      title: "AI Tools & Designing Certification",
-      role: "Applied Generative AI & Visual Workflow",
-      issuer: "Professional AI & Design Institute",
-      tag: "Emerging Tech & Creative Automation",
+      number: "04",
+      titlePart1: "CLEVER",
+      titlePart2: "HARVEY",
+      side: "left",
+      icon: BriefcaseBusiness,
+      tag: "Fellowships",
+      degree: "Junior CEO, Junior CMO & Junior CFO",
+      desc: "Industry simulations in leadership, multi-channel campaigns & financial forecasting.",
+    },
+    {
+      number: "05",
+      titlePart1: "REAL ESTATE",
+      titlePart2: "SALES",
+      side: "right",
+      icon: Compass,
+      tag: "Diploma",
+      degree: "Diploma in Real Estate Marketing & Sales",
+      desc: "Property positioning, comparative market analysis, buyer psychology & high-ticket closing.",
+    },
+    {
+      number: "06",
+      titlePart1: "AI &",
+      titlePart2: "DESIGNING",
+      side: "left",
       icon: Bot,
-      badgeColor: "bg-purple-100 text-purple-900 border-purple-300",
-      summary: "Mastery of generative AI prompting, visual prototyping in Canva/Midjourney, and leveraging modern AI workflows for high-velocity marketing pipelines."
-    }
+      tag: "Certification",
+      degree: "Applied Generative Workflows",
+      desc: "Generative AI prompting, Canva visual prototyping & fast marketing workflows.",
+    },
   ];
+
+  // Desktop S-bend SVG ribbon path with circular loops
+  const desktopPathString = `
+    M 500 20
+    C 520 60, 600 80, 660 140
+    C 730 200, 780 260, 740 300
+    C 700 340, 630 300, 650 240
+    C 670 180, 730 220, 680 320
+    C 610 440, 420 370, 340 440
+    C 270 500, 230 570, 260 610
+    C 290 650, 360 620, 350 560
+    C 340 500, 270 520, 340 640
+    C 430 780, 610 680, 670 750
+    C 740 820, 760 890, 710 940
+    C 660 990, 580 970, 610 900
+    C 640 830, 710 880, 650 990
+    C 550 1100, 410 1010, 340 1070
+    C 270 1130, 240 1200, 280 1240
+    C 320 1280, 390 1250, 380 1190
+    C 370 1130, 300 1150, 360 1260
+    C 450 1400, 600 1310, 670 1370
+    C 740 1440, 750 1520, 660 1580
+    C 550 1650, 410 1590, 340 1660
+    C 280 1720, 320 1770, 400 1780
+    C 480 1790, 500 1770, 500 1800
+  `;
+
+  // Mobile winding SVG path running down the side with loops
+  const mobilePathString = `
+    M 25 10
+    C 35 100, 15 200, 25 320
+    C 38 350, 45 390, 38 420
+    C 30 450, 12 430, 18 400
+    C 24 370, 36 390, 25 460
+    C 15 580, 35 700, 25 820
+    C 38 850, 45 890, 38 920
+    C 30 950, 12 930, 18 900
+    C 24 870, 36 890, 25 960
+    C 15 1080, 35 1200, 25 1320
+    C 38 1350, 45 1390, 38 1420
+    C 30 1450, 12 1430, 18 1400
+    C 24 1370, 36 1390, 25 1460
+    C 15 1580, 35 1700, 25 1800
+  `;
+
+  useEffect(() => {
+    if (typeof window === 'undefined') return;
+    if (window.matchMedia('print').matches) return;
+
+    const container = containerRef.current;
+    const dPath = desktopPathRef.current;
+    const mPath = mobilePathRef.current;
+    if (!container) return;
+
+    // Desktop length & setup
+    let dLength = 0;
+    if (dPath) {
+      dLength = dPath.getTotalLength();
+      dPath.style.strokeDasharray = `${dLength}`;
+      dPath.style.strokeDashoffset = `${dLength}`;
+    }
+
+    // Mobile length & setup
+    let mLength = 0;
+    if (mPath) {
+      mLength = mPath.getTotalLength();
+      mPath.style.strokeDasharray = `${mLength}`;
+      mPath.style.strokeDashoffset = `${mLength}`;
+    }
+
+    // ScrollTrigger to animate stroke-dashoffset dynamically as user scrolls
+    const st = ScrollTrigger.create({
+      trigger: container,
+      start: 'top 75%',
+      end: 'bottom 80%',
+      scrub: 0.4,
+      onUpdate: (self) => {
+        const progress = self.progress;
+
+        if (dPath && dLength > 0) {
+          dPath.style.strokeDashoffset = `${Math.max(0, dLength * (1 - progress))}`;
+        }
+
+        if (mPath && mLength > 0) {
+          mPath.style.strokeDashoffset = `${Math.max(0, mLength * (1 - progress))}`;
+        }
+
+        // Activate nodes dynamically as the orange ribbon reaches each position
+        nodeRefs.current.forEach((node, idx) => {
+          if (!node) return;
+          const activationThreshold = (idx + 0.1) / 6;
+          if (progress >= activationThreshold) {
+            node.classList.add('node-active');
+          } else {
+            node.classList.remove('node-active');
+          }
+        });
+      },
+    });
+
+    return () => {
+      st.kill();
+    };
+  }, []);
 
   return (
-    <section id="credentials" className="py-12 sm:py-20 px-4 sm:px-6 lg:px-8 relative">
+    <section id="credentials" className="py-16 sm:py-24 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
       <div className="max-w-5xl mx-auto">
         
         {/* Section Header */}
-        <div className="text-center mb-10 sm:mb-14">
+        <div className="text-center mb-16 sm:mb-20">
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-[#121212] tracking-tight flex items-center justify-center gap-2">
             <span>Education & Certifications</span>
             <DoodleSparkle className="w-7 h-7 text-[#1A1A1A] hidden sm:inline-block" strokeColor="#1A1A1A" />
@@ -118,123 +204,169 @@ export default function Education() {
           </p>
         </div>
 
-        {/* Part 1: Education Stacked Index Cards */}
-        <div className="space-y-6">
-          <div className="flex items-center justify-between border-b border-[#121212] pb-2">
-            <span className="font-mono text-xs font-bold uppercase tracking-wider text-[#121212] flex items-center gap-2">
-              <BookOpen size={14} className="text-amber-700" />
-              <span>Academic Pathway</span>
-            </span>
-            <span className="text-xs font-mono text-[#625E56]">3 Milestones</span>
+        {/* Vertical Scroll-Driven Winding SVG Pathway Container */}
+        <div ref={containerRef} className="relative py-4">
+          
+          {/* Desktop SVG Pathway (Hidden on mobile, visible on md:) */}
+          <div className="hidden md:block absolute inset-0 pointer-events-none z-0">
+            <svg
+              viewBox="0 0 1000 1800"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+              className="w-full h-full"
+              preserveAspectRatio="none"
+            >
+              {/* Muted background track path */}
+              <path
+                d={desktopPathString}
+                stroke="rgba(217, 78, 31, 0.2)"
+                strokeWidth="6"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                fill="none"
+              />
+              {/* Active burnt-orange / terracotta scroll-drawn path */}
+              <path
+                ref={desktopPathRef}
+                d={desktopPathString}
+                stroke="#D94E1F"
+                strokeWidth="6"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                fill="none"
+              />
+            </svg>
           </div>
 
-          <div className="space-y-4">
-            {educationList.map((edu, idx) => (
-              <div
-                key={edu.institution}
-                className={`tactile-card p-6 sm:p-7 rounded-2xl border-[1.8px] ${edu.color} relative overflow-hidden`}
-              >
-                {/* Index Card Tab Style Header */}
-                <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-[#E2DED5] pb-3 mb-4">
-                  <div className="flex items-center gap-2">
-                    <span className="w-6 h-6 rounded-full bg-[#121212] text-white font-mono text-xs font-bold flex items-center justify-center">
-                      0{idx + 1}
-                    </span>
-                    <span className="font-mono text-xs font-bold uppercase tracking-wide px-2 py-0.5 rounded bg-white/80 border border-[#D5D0C5]">
-                      {edu.tag}
-                    </span>
-                  </div>
-
-                  <div className="flex items-center gap-3 font-mono text-xs text-[#625E56]">
-                    <span className="flex items-center gap-1">
-                      <Calendar size={13} />
-                      {edu.period}
-                    </span>
-                    <span>•</span>
-                    <span className="flex items-center gap-1">
-                      <MapPin size={13} />
-                      {edu.location}
-                    </span>
-                  </div>
-                </div>
-
-                <div className="space-y-2">
-                  <h3 className="text-xl sm:text-2xl font-black text-[#121212] tracking-tight">
-                    {edu.institution}
-                  </h3>
-                  <p className={`text-sm sm:text-base font-semibold ${edu.accent}`}>
-                    {edu.degree}
-                  </p>
-
-                  <ul className="pt-2 space-y-1.5 text-xs sm:text-sm text-[#282828]">
-                    {edu.details.map((bullet, bIdx) => (
-                      <li key={bIdx} className="flex items-start gap-2">
-                        <CheckCircle size={14} className="text-emerald-700 mt-1 flex-shrink-0" />
-                        <span>{bullet}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-
-        {/* Part 2: Certifications & Diplomas */}
-        <div className="mt-14 space-y-6">
-          <div className="flex items-center justify-between border-b border-[#121212] pb-2">
-            <span className="font-mono text-xs font-bold uppercase tracking-wider text-[#121212] flex items-center gap-2">
-              <Award size={14} className="text-orange-700" />
-              <span>Certifications & Specialized Diplomas</span>
-            </span>
-            <span className="text-xs font-mono text-[#625E56]">Verified Diplomas</span>
+          {/* Mobile SVG Pathway (Visible on mobile, hidden on md:) */}
+          <div className="block md:hidden absolute left-3 top-8 bottom-8 w-10 pointer-events-none z-0">
+            <svg
+              viewBox="0 0 50 1800"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+              className="w-full h-full"
+              preserveAspectRatio="none"
+            >
+              {/* Mobile Muted Track */}
+              <path
+                d={mobilePathString}
+                stroke="rgba(217, 78, 31, 0.2)"
+                strokeWidth="5"
+                strokeLinecap="round"
+                fill="none"
+              />
+              {/* Mobile Active Scroll-Drawn Path */}
+              <path
+                ref={mobilePathRef}
+                d={mobilePathString}
+                stroke="#D94E1F"
+                strokeWidth="5"
+                strokeLinecap="round"
+                fill="none"
+              />
+            </svg>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
-            {certificationsList.map((cert) => {
-              const Icon = cert.icon;
+          {/* 6 Milestone Nodes Along the Pathway */}
+          <div className="space-y-16 sm:space-y-24 relative z-10">
+            {stops.map((stop, idx) => {
+              const Icon = stop.icon;
+              const isRight = stop.side === "right";
+
               return (
                 <div
-                  key={cert.title}
-                  className="tactile-card p-5 sm:p-6 rounded-2xl bg-white border-[1.8px] border-[#121212] flex flex-col justify-between space-y-4 hover:shadow-tactile-hover transition-all"
+                  key={stop.number}
+                  ref={(el) => (nodeRefs.current[idx] = el)}
+                  className="pathway-node relative pl-10 md:pl-0"
                 >
-                  <div className="space-y-3">
-                    <div className="flex items-start justify-between">
-                      <div className="p-2.5 rounded-xl bg-neutral-100 border border-[#121212] text-[#121212]">
-                        <Icon size={20} />
+                  <div className="md:grid md:grid-cols-12 items-center">
+                    
+                    {/* Left Column (Desktop) */}
+                    {!isRight ? (
+                      /* Left Node on Desktop */
+                      <div className="md:col-span-6 md:pr-10 text-left md:text-right">
+                        {/* Display Title Split by Illustrated Square Badge */}
+                        <div className="flex items-center gap-2.5 mb-2.5 text-xl sm:text-2xl lg:text-3xl font-black uppercase tracking-tight text-[#121212] justify-start md:justify-end">
+                          <span>{stop.titlePart1}</span>
+                          <div className="w-9 h-9 rounded-lg bg-[#D94E1F] text-white flex items-center justify-center border-2 border-[#121212] shadow-sm flex-shrink-0">
+                            <Icon size={18} />
+                          </div>
+                          <span>{stop.titlePart2}</span>
+                        </div>
+
+                        {/* Tilted White Pill-Bordered Callout Box */}
+                        <div className="inline-block w-full text-left">
+                          <div className="tilted-box-left p-5 sm:p-6 bg-white border-[1.5px] border-[#D94E1F] rounded-2xl shadow-tactile">
+                            <div className="flex items-center justify-between gap-2 mb-2">
+                              <span className="font-mono text-[11px] font-bold uppercase tracking-wider text-[#D94E1F] bg-orange-50 border border-orange-200 px-2.5 py-0.5 rounded-full">
+                                {stop.tag}
+                              </span>
+                              <span className="font-mono text-xs font-bold text-[#8C867A]">
+                                Stop {stop.number}
+                              </span>
+                            </div>
+
+                            <h4 className="text-sm sm:text-base font-bold text-[#121212]">
+                              {stop.degree}
+                            </h4>
+
+                            <p className="text-xs sm:text-sm text-[#282828] mt-1.5 leading-relaxed">
+                              {stop.desc}
+                            </p>
+                          </div>
+                        </div>
                       </div>
-                      <span className={`text-[10px] font-mono font-bold uppercase px-2 py-0.5 rounded border ${cert.badgeColor}`}>
-                        Verified
-                      </span>
-                    </div>
+                    ) : (
+                      /* Empty Column on Desktop for Right-aligned nodes */
+                      <div className="hidden md:block md:col-span-6" />
+                    )}
 
-                    <div>
-                      <h4 className="text-base font-black text-[#121212] leading-snug">
-                        {cert.title}
-                      </h4>
-                      <p className="text-xs font-bold text-amber-800 mt-0.5">
-                        {cert.role}
-                      </p>
-                      <span className="text-[11px] font-mono text-[#625E56] block mt-0.5">
-                        Issuer: {cert.issuer}
-                      </span>
-                    </div>
+                    {/* Right Column (Desktop) */}
+                    {isRight ? (
+                      /* Right Node on Desktop */
+                      <div className="md:col-span-6 md:pl-10 text-left">
+                        {/* Display Title Split by Illustrated Square Badge */}
+                        <div className="flex items-center gap-2.5 mb-2.5 text-xl sm:text-2xl lg:text-3xl font-black uppercase tracking-tight text-[#121212] justify-start">
+                          <span>{stop.titlePart1}</span>
+                          <div className="w-9 h-9 rounded-lg bg-[#D94E1F] text-white flex items-center justify-center border-2 border-[#121212] shadow-sm flex-shrink-0">
+                            <Icon size={18} />
+                          </div>
+                          <span>{stop.titlePart2}</span>
+                        </div>
 
-                    <p className="text-xs text-[#282828] leading-relaxed pt-1 border-t border-[#E8E4DA]">
-                      {cert.summary}
-                    </p>
-                  </div>
+                        {/* Tilted White Pill-Bordered Callout Box */}
+                        <div className="inline-block w-full text-left">
+                          <div className="tilted-box-right p-5 sm:p-6 bg-white border-[1.5px] border-[#D94E1F] rounded-2xl shadow-tactile">
+                            <div className="flex items-center justify-between gap-2 mb-2">
+                              <span className="font-mono text-[11px] font-bold uppercase tracking-wider text-[#D94E1F] bg-orange-50 border border-orange-200 px-2.5 py-0.5 rounded-full">
+                                {stop.tag}
+                              </span>
+                              <span className="font-mono text-xs font-bold text-[#8C867A]">
+                                Stop {stop.number}
+                              </span>
+                            </div>
 
-                  <div className="pt-2 border-t border-[#E8E4DA] flex items-center justify-between">
-                    <span className="text-[10px] font-mono font-semibold text-[#8C867A] uppercase">
-                      {cert.tag}
-                    </span>
-                    <Sparkle className="w-3.5 h-3.5 text-amber-500" />
+                            <h4 className="text-sm sm:text-base font-bold text-[#121212]">
+                              {stop.degree}
+                            </h4>
+
+                            <p className="text-xs sm:text-sm text-[#282828] mt-1.5 leading-relaxed">
+                              {stop.desc}
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                    ) : (
+                      /* Empty Column on Desktop for Left-aligned nodes */
+                      <div className="hidden md:block md:col-span-6" />
+                    )}
+
                   </div>
                 </div>
               );
             })}
           </div>
+
         </div>
 
       </div>
