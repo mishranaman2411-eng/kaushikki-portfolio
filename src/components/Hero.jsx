@@ -45,14 +45,6 @@ export default function Hero({ onOpenContact }) {
 
   return (
     <section id="hero" className="relative pt-6 pb-16 sm:pt-10 sm:pb-24 px-4 sm:px-6 lg:px-8 overflow-hidden">
-      {/* Hand-crafted ambient doodle annotations */}
-      <div className="absolute top-10 left-6 lg:left-24 pointer-events-none hidden lg:flex items-center gap-2 opacity-80">
-        <DoodleSparkle className="w-5 h-5 text-[#1A1A1A]" strokeColor="#1A1A1A" />
-        <span className="font-hand text-xl font-bold text-[#1A1A1A] rotate-[-5deg] inline-block">
-          student @ IIM Bangalore
-        </span>
-      </div>
-
       <div className="max-w-6xl mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
           
