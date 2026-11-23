@@ -1,15 +1,11 @@
 import React, { useState, useEffect } from 'react';
-import { FileDown, Volume2, VolumeX, Sparkles, Clock, Menu, X, ArrowUpRight } from 'lucide-react';
-import { playClick, toggleSound, isSoundEnabled } from '../utils/sound';
+import { FileDown, Sparkles, Clock, Menu, X, ArrowUpRight } from 'lucide-react';
 
 export default function Navbar({ onOpenResumeModal }) {
-  const [soundOn, setSoundOn] = useState(true);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [kolkataTime, setKolkataTime] = useState('');
 
   useEffect(() => {
-    setSoundOn(isSoundEnabled());
-
     // Update Kolkata (IST) time every minute
     const updateTime = () => {
       const now = new Date();
@@ -27,15 +23,8 @@ export default function Navbar({ onOpenResumeModal }) {
     return () => clearInterval(interval);
   }, []);
 
-  const handleSoundToggle = () => {
-    const next = toggleSound();
-    setSoundOn(next);
-    if (next) playClick();
-  };
-
   const handleNavClick = (e, id) => {
     e.preventDefault();
-    playClick();
     setMobileMenuOpen(false);
     const element = document.getElementById(id);
     if (element) {
@@ -48,7 +37,6 @@ export default function Navbar({ onOpenResumeModal }) {
   };
 
   const handlePrint = () => {
-    playClick();
     window.print();
   };
 
@@ -96,7 +84,7 @@ export default function Navbar({ onOpenResumeModal }) {
             ))}
           </nav>
 
-          {/* Actions: Status pill, Sound toggle, Save Resume (PDF) */}
+          {/* Actions: Status pill & Save Resume (PDF) */}
           <div className="flex items-center gap-2 sm:gap-3">
             {/* Live Kolkata status badge */}
             <div className="hidden lg:flex items-center gap-1.5 px-2.5 py-1 bg-emerald-50 border border-emerald-300 rounded-full text-[11px] font-mono text-emerald-800">
@@ -106,16 +94,6 @@ export default function Navbar({ onOpenResumeModal }) {
               </span>
               <span>Kolkata {kolkataTime || 'IST'}</span>
             </div>
-
-            {/* Sound toggle button */}
-            <button
-              onClick={handleSoundToggle}
-              title={soundOn ? 'Mute tactile clicks' : 'Enable tactile clicks'}
-              aria-label={soundOn ? 'Mute audio' : 'Unmute audio'}
-              className="p-1.5 rounded-lg border border-[#D5D0C5] bg-[#F4F1EA] text-[#625E56] hover:text-[#121212] hover:border-[#121212] transition-colors"
-            >
-              {soundOn ? <Volume2 size={16} /> : <VolumeX size={16} />}
-            </button>
 
             {/* Save Resume (PDF) Button */}
             <button
@@ -132,10 +110,7 @@ export default function Navbar({ onOpenResumeModal }) {
 
             {/* Mobile menu hamburger toggle */}
             <button
-              onClick={() => {
-                playClick();
-                setMobileMenuOpen(!mobileMenuOpen);
-              }}
+              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
               className="md:hidden p-1.5 rounded-lg border border-[#121212] bg-[#FAF9F5] text-[#121212]"
               aria-label="Toggle Navigation Menu"
             >
