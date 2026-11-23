@@ -1,0 +1,243 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+    color: #121212;
+    background-color: #F8F7F4;
+  }
+
+  ::selection {
+    background-color: #FEF08A;
+    color: #121212;
+  }
+}
+
+/* Tactile paper texture background */
+.paper-texture {
+  background-color: #F8F7F4;
+  background-image: 
+    radial-gradient(#D5D0C5 0.75px, transparent 0.75px),
+    radial-gradient(#E8E4DA 0.75px, #F8F7F4 0.75px);
+  background-size: 24px 24px;
+  background-position: 0 0, 12px 12px;
+}
+
+/* Washi tape effect */
+.washi-tape {
+  position: relative;
+}
+.washi-tape::before {
+  content: '';
+  position: absolute;
+  top: -10px;
+  left: 50%;
+  transform: translateX(-50%) rotate(-1.5deg);
+  width: 90px;
+  height: 22px;
+  background: rgba(254, 240, 138, 0.75);
+  box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+  border-left: 2px dashed rgba(202, 138, 4, 0.4);
+  border-right: 2px dashed rgba(202, 138, 4, 0.4);
+  backdrop-filter: blur(1px);
+  z-index: 20;
+}
+
+.washi-tape-coral::before {
+  background: rgba(254, 215, 170, 0.85);
+  border-left: 2px dashed rgba(234, 88, 12, 0.4);
+  border-right: 2px dashed rgba(234, 88, 12, 0.4);
+}
+
+.washi-tape-mint::before {
+  background: rgba(187, 247, 208, 0.8);
+  border-left: 2px dashed rgba(22, 163, 74, 0.4);
+  border-right: 2px dashed rgba(22, 163, 74, 0.4);
+}
+
+/* Tactile card styles */
+.tactile-card {
+  background-color: #FFFFFF;
+  border: 1.5px solid #121212;
+  box-shadow: 3px 4px 0 0 #121212;
+  transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.tactile-card:hover {
+  transform: translate(-2px, -3px);
+  box-shadow: 5px 7px 0 0 #121212;
+}
+
+.tactile-btn {
+  border: 1.5px solid #121212;
+  box-shadow: 2px 2px 0 0 #121212;
+  transition: all 0.15s ease;
+}
+
+.tactile-btn:hover {
+  transform: translate(-1px, -1px);
+  box-shadow: 3px 3px 0 0 #121212;
+}
+
+.tactile-btn:active {
+  transform: translate(1px, 1px);
+  box-shadow: 0 0 0 0 #121212;
+}
+
+/* Stamp Badge */
+.stamp-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  padding: 0.25rem 0.65rem;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  border: 1.5px dashed currentColor;
+  border-radius: 4px;
+}
+
+/* Custom handwritten highlighter */
+.hand-highlight {
+  position: relative;
+  display: inline-block;
+  white-space: nowrap;
+}
+.hand-highlight::after {
+  content: '';
+  position: absolute;
+  left: -2px;
+  right: -2px;
+  bottom: 2px;
+  height: 38%;
+  background: #FEF08A;
+  z-index: -1;
+  border-radius: 2px;
+  transform: rotate(-0.5deg);
+}
+
+/* Lined Apple Notes Paper */
+.apple-notes-paper {
+  background-color: #FCFBF7;
+  background-image: repeating-linear-gradient(
+    transparent,
+    transparent 31px,
+    #ECE8DE 31px,
+    #ECE8DE 32px
+  );
+  line-height: 32px;
+}
+
+/* ==============================================================
+   HAND-DRAWN SVG DOODLES: DRAWN-ON SCROLL ANIMATION
+   ============================================================== */
+.doodle-underline path,
+.doodle-arrow path,
+.doodle-circle path,
+.doodle-divider path {
+  stroke-dasharray: 450;
+  stroke-dashoffset: 450;
+  transition: stroke-dashoffset 0.9s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* Trigger when container or element enters viewport (.is-visible) */
+.is-visible .doodle-underline path,
+.is-visible .doodle-arrow path,
+.is-visible .doodle-circle path,
+.is-visible .doodle-divider path,
+.doodle-drawn .doodle-underline path,
+.doodle-drawn .doodle-arrow path,
+.doodle-drawn .doodle-circle path,
+.doodle-drawn .doodle-divider path,
+.doodle-underline.is-visible path,
+.doodle-arrow.is-visible path,
+.doodle-circle.is-visible path,
+.doodle-divider.is-visible path {
+  stroke-dashoffset: 0;
+}
+
+/* Sparkle subtle pop animation */
+.doodle-sparkle {
+  transform-origin: center;
+  transition: transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1), opacity 0.5s ease;
+}
+.is-visible .doodle-sparkle,
+.doodle-sparkle.is-visible {
+  animation: doodle-pop 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+}
+
+@keyframes doodle-pop {
+  0% { transform: scale(0) rotate(-20deg); opacity: 0; }
+  70% { transform: scale(1.15) rotate(5deg); opacity: 1; }
+  100% { transform: scale(1) rotate(0deg); opacity: 1; }
+}
+
+
+/* Smooth custom scrollbar */
+::-webkit-scrollbar {
+  width: 9px;
+}
+::-webkit-scrollbar-track {
+  background: #F8F7F4;
+}
+::-webkit-scrollbar-thumb {
+  background: #D4CEBF;
+  border: 2px solid #F8F7F4;
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #A8A294;
+}
+
+/* ==============================================================
+   PRINT STYLES FOR CLEAN RESUME PDF EXPORT
+   ============================================================== */
+@media print {
+  @page {
+    size: letter portrait;
+    margin: 12mm 15mm;
+  }
+
+  body {
+    background: #FFFFFF !important;
+    color: #111111 !important;
+    font-size: 10.5pt;
+    line-height: 1.4;
+  }
+
+  /* Hide interactive elements, navigation, ambient decor */
+  .no-print,
+  nav,
+  footer,
+  #hero,
+  #about,
+  #experience,
+  #education,
+  #contact,
+  .washi-tape::before,
+  button,
+  .fixed {
+    display: none !important;
+  }
+
+  /* Show the printable resume container */
+  #printable-resume {
+    display: block !important;
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    box-shadow: none !important;
+    border: none !important;
+    background: #FFFFFF !important;
+  }
+
+  /* Ensure links are readable */
+  a {
+    color: #111111 !important;
+    text-decoration: none !important;
+  }
+}
