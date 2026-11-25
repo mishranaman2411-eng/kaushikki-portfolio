@@ -25,7 +25,7 @@
 3. **Apple Notes About Entry (`The Studio & Engineering Memo`):** Authentic raw Apple Note on ruled-line paper with thin 1px dividers, yellow highlighter accents, interactive Working Stack checklist, and copyable text.
 4. **Builds & Leadership:**
    - **ARAEL WEARS — Chief Technology Officer (CTO):** Custom e-commerce storefront, Qikink POD + Razorpay integration, and retro cutscene lookbook direction.
-   - **Independent Engineering Builds — 3D Web & Systems Developer:** 120-frame scroll-driven 3D product showcase, dark editorial web concepts, and Python 3.11 NSE/BSE Equity Research CLI.
+   - **Weerolliinn — Founder & Owner:** 120-frame scroll-driven 3D product showcase, dark editorial web concepts, and Python 3.11 NSE/BSE Equity Research CLI.
 5. **Winding SVG Pathway (`Education & Engineering Path`):** Scroll-scrubbed S-bend ribbon connecting CCET Chandigarh, GMSSS-37, Satluj Public School, VLSI & Hardware Labs, 3D Web & ARAEL CTO, and Physical Design & STA track.
 6. **iOS Mail Contact Composer:** Interactive email composer pre-filled for `mishranaman2411@gmail.com`, 4 topic selector pills generating real-time drafts, and one-click copy buttons for Email, Phone/WhatsApp (`+91 90154 99931`), and GitHub (`github.com/mishranaman2411-eng`).
 

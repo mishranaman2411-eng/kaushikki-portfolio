@@ -179,11 +179,11 @@ export default function Experience() {
                 </div>
 
                 <h3 className="text-2xl sm:text-3xl font-black text-[#121212] mt-2">
-                  Independent Engineering Builds
+                  Weerolliinn
                 </h3>
 
                 <p className="text-sm sm:text-base font-semibold text-emerald-800">
-                  3D Web &amp; Systems Developer
+                  Founder &amp; Owner
                 </p>
               </div>
 

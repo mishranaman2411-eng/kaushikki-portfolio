@@ -79,7 +79,7 @@ export default function Hero() {
                   <DoodleUnderline className="w-full h-3 text-[#1A1A1A]" strokeColor="#1A1A1A" />
                 </span>
               </span>{' '}
-              — a 3D web developer, UI/UX engineer, and 3rd-year B.Tech ECE student at CCET Chandigarh. I build scroll-driven WebGL experiences, full-stack e-commerce storefronts, and Python developer tools.
+              — Founder &amp; Owner of Weerolliinn, CTO at ARAEL WEARS, and a 3rd-year B.Tech ECE student at CCET Chandigarh building scroll-driven 3D web experiences and full-stack storefronts.
             </p>
 
             {/* Tactile Key Metrics Ribbon with Looped Circles */}
@@ -214,7 +214,7 @@ export default function Hero() {
                         Naman Mishra
                       </p>
                       <p className="font-hand text-sm text-amber-200 leading-tight">
-                        "engineering tactile web &amp; systems"
+                        Founder @ Weerolliinn • CTO @ ARAEL WEARS
                       </p>
                     </div>
 

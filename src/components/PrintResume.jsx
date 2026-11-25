@@ -106,11 +106,11 @@ export default function PrintResume() {
 
               <div>
                 <div className="flex justify-between font-bold">
-                  <span>Independent Engineering Builds</span>
+                  <span>Weerolliinn</span>
                   <span className="font-semibold text-gray-700">2025 – Present</span>
                 </div>
                 <div className="flex justify-between text-gray-800 italic mb-1">
-                  <span>3D Web &amp; Systems Developer</span>
+                  <span>Founder &amp; Owner</span>
                   <span>Chandigarh, India</span>
                 </div>
                 <ul className="list-disc pl-4 space-y-1 text-gray-800 text-[11.5px]">
