@@ -1,12 +1,13 @@
 import React, { useState, useEffect } from 'react';
-import { FileDown, Sparkles, Clock, Menu, X, ArrowUpRight } from 'lucide-react';
+import { Menu, X, ArrowUpRight } from 'lucide-react';
+import { GithubIcon } from './HandDrawn';
 
-export default function Navbar({ onOpenResumeModal }) {
+export default function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [kolkataTime, setKolkataTime] = useState('');
+  const [chandigarhTime, setChandigarhTime] = useState('');
 
   useEffect(() => {
-    // Update Kolkata (IST) time every minute
+    // Update Chandigarh (IST) time every minute
     const updateTime = () => {
       const now = new Date();
       const options = {
@@ -15,7 +16,7 @@ export default function Navbar({ onOpenResumeModal }) {
         minute: '2-digit',
         hour12: true,
       };
-      setKolkataTime(now.toLocaleTimeString('en-US', options));
+      setChandigarhTime(now.toLocaleTimeString('en-US', options));
     };
 
     updateTime();
@@ -36,10 +37,6 @@ export default function Navbar({ onOpenResumeModal }) {
     }
   };
 
-  const handlePrint = () => {
-    window.print();
-  };
-
   return (
     <header className="sticky top-0 z-50 w-full px-4 sm:px-6 lg:px-8 pt-3 pb-2 transition-all no-print">
       <div className="max-w-6xl mx-auto">
@@ -52,14 +49,14 @@ export default function Navbar({ onOpenResumeModal }) {
             className="group flex items-center gap-2.5"
           >
             <div className="w-8 h-8 rounded-lg bg-[#121212] text-[#F8F7F4] flex items-center justify-center font-mono font-bold text-xs tracking-tighter shadow-sm group-hover:bg-amber-500 group-hover:text-[#121212] transition-colors">
-              KR
+              NM
             </div>
             <div className="flex flex-col">
               <span className="font-bold text-sm tracking-tight text-[#121212] group-hover:text-amber-800 transition-colors">
-                Koushhiki Roy
+                Naman Mishra
               </span>
               <span className="text-[10px] font-mono font-medium text-[#625E56] hidden sm:block">
-                IIM Bangalore ’29 • Kolkata
+                B.Tech ECE ’28 • Chandigarh, India
               </span>
             </div>
           </a>
@@ -68,8 +65,8 @@ export default function Navbar({ onOpenResumeModal }) {
           <nav className="hidden md:flex items-center gap-1 lg:gap-2">
             {[
               { label: 'About', id: 'about' },
-              { label: 'Experience', id: 'experience' },
-              { label: 'Credentials', id: 'credentials' },
+              { label: 'Builds', id: 'experience' },
+              { label: 'Pathway', id: 'credentials' },
               { label: 'Contact', id: 'contact' },
             ].map((link) => (
               <a
@@ -84,29 +81,29 @@ export default function Navbar({ onOpenResumeModal }) {
             ))}
           </nav>
 
-          {/* Actions: Status pill & Save Resume (PDF) */}
+          {/* Actions: Status pill & View GitHub */}
           <div className="flex items-center gap-2 sm:gap-3">
-            {/* Live Kolkata status badge */}
+            {/* Live Chandigarh status badge */}
             <div className="hidden lg:flex items-center gap-1.5 px-2.5 py-1 bg-emerald-50 border border-emerald-300 rounded-full text-[11px] font-mono text-emerald-800">
               <span className="relative flex h-2 w-2">
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
                 <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
               </span>
-              <span>Kolkata {kolkataTime || 'IST'}</span>
+              <span>Chandigarh {chandigarhTime || 'IST'}</span>
             </div>
 
-            {/* Save Resume (PDF) Button */}
-            <button
-              onClick={handlePrint}
+            {/* View GitHub Button */}
+            <a
+              href="https://github.com/mishranaman2411-eng"
+              target="_blank"
+              rel="noreferrer"
               className="tactile-btn flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-[#FEF08A] text-[#121212] text-xs font-bold hover:bg-[#FDE047] active:translate-y-0.5"
-              title="Prints or saves an immaculate 1-page PDF resume"
+              title="Open Naman Mishra's GitHub profile"
             >
-              <FileDown size={14} className="stroke-[2.5]" />
-              <span>Save Resume</span>
-              <span className="hidden sm:inline-block text-[10px] uppercase font-mono px-1 py-0.2 bg-[#121212] text-white rounded">
-                PDF
-              </span>
-            </button>
+              <GithubIcon size={14} />
+              <span>View GitHub</span>
+              <ArrowUpRight size={13} className="hidden sm:inline-block stroke-[2.5]" />
+            </a>
 
             {/* Mobile menu hamburger toggle */}
             <button
@@ -126,14 +123,14 @@ export default function Navbar({ onOpenResumeModal }) {
               <span className="text-xs font-mono text-[#625E56]">Navigation</span>
               <span className="text-xs font-mono text-emerald-700 flex items-center gap-1">
                 <span className="h-1.5 w-1.5 rounded-full bg-emerald-500 inline-block"></span>
-                Kolkata {kolkataTime}
+                Chandigarh {chandigarhTime}
               </span>
             </div>
 
             {[
-              { label: 'About Koushhiki', id: 'about' },
-              { label: 'Experience & Sales Track', id: 'experience' },
-              { label: 'Education & Credentials', id: 'credentials' },
+              { label: 'About Naman', id: 'about' },
+              { label: 'Builds & Leadership', id: 'experience' },
+              { label: 'Education & Engineering Path', id: 'credentials' },
               { label: 'Get In Touch (Mail Composer)', id: 'contact' },
             ].map((link) => (
               <a
@@ -148,13 +145,15 @@ export default function Navbar({ onOpenResumeModal }) {
             ))}
 
             <div className="pt-2 border-t border-[#E2DED5]">
-              <button
-                onClick={handlePrint}
+              <a
+                href="https://github.com/mishranaman2411-eng"
+                target="_blank"
+                rel="noreferrer"
                 className="w-full tactile-btn flex items-center justify-center gap-2 py-2.5 rounded-xl bg-[#FEF08A] text-[#121212] text-xs font-bold"
               >
-                <FileDown size={14} />
-                <span>Download / Print Resume (PDF)</span>
-              </button>
+                <GithubIcon size={14} />
+                <span>View GitHub (@mishranaman2411-eng)</span>
+              </a>
             </div>
           </div>
         )}

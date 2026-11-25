@@ -1,13 +1,13 @@
 import React, { useEffect, useRef } from 'react';
-import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { 
-  GraduationCap, 
-  BookOpen, 
-  Award, 
-  BriefcaseBusiness, 
-  Compass, 
-  Bot 
+import {
+  Award,
+  BookOpen,
+  GraduationCap,
+  Cpu,
+  Code2,
+  Compass,
+  ArrowDown
 } from 'lucide-react';
 import { DoodleUnderline, DoodleSparkle } from './HandDrawn';
 
@@ -15,72 +15,74 @@ export default function Education() {
   const containerRef = useRef(null);
   const desktopPathRef = useRef(null);
   const mobilePathRef = useRef(null);
+  const dockRef = useRef(null);
   const nodeRefs = useRef([]);
 
+  // Chronological Milestone Order (Top to Bottom — 6 Stops)
   const stops = [
     {
       number: "01",
-      titlePart1: "IIM",
-      titlePart2: "BANGALORE",
+      titlePart1: "SATLUJ",
+      titlePart2: "PUBLIC SCHOOL",
       side: "right",
-      icon: GraduationCap,
-      tag: "2026 – 2029 • Bangalore",
-      degree: "BBA in Digital Business & Entrepreneurship (BBA DBE)",
-      desc: "Digital business models, sales negotiation, corporate finance & go-to-market strategy.",
+      icon: Award,
+      tag: "2022 • Panchkula",
+      degree: "Secondary School (Class X)",
+      desc: "Foundational academics and early interest in computing.",
     },
     {
       number: "02",
-      titlePart1: "HOLY",
-      titlePart2: "MOTHER’S ACADEMY",
+      titlePart1: "GMSSS-37",
+      titlePart2: "CHANDIGARH",
       side: "left",
       icon: BookOpen,
-      tag: "2026 • Kolkata",
-      degree: "Higher Secondary (Class XII)",
-      desc: "Commerce, analytical foundations, speech & debate.",
+      tag: "2024 • Chandigarh",
+      degree: "Senior Secondary (Class XII)",
+      desc: "Science and Mathematics foundation prior to engineering.",
     },
     {
       number: "03",
-      titlePart1: "DPS",
-      titlePart2: "MEGACITY",
+      titlePart1: "CCET",
+      titlePart2: "CHANDIGARH",
       side: "right",
-      icon: Award,
-      tag: "2023 • Kolkata",
-      degree: "Secondary School (Class X)",
-      desc: "Languages, sciences, humanities & early MUN public speaking.",
+      icon: GraduationCap,
+      tag: "2024 – 2028 • Sector 26, Chandigarh",
+      degree: "B.Tech in Electronics & Communication Engineering (ECE, 3rd Year)",
+      desc: "Digital Signal Processing, CMOS VLSI Design, Computer Networks & Automata Theory.",
     },
     {
       number: "04",
-      titlePart1: "CLEVER",
-      titlePart2: "HARVEY",
+      titlePart1: "VLSI &",
+      titlePart2: "HARDWARE LABS",
       side: "left",
-      icon: BriefcaseBusiness,
-      tag: "Fellowships",
-      degree: "Junior CEO, Junior CMO & Junior CFO",
-      desc: "Industry simulations in leadership, multi-channel campaigns & financial forecasting.",
+      icon: Cpu,
+      tag: "Core Engineering",
+      degree: "RTL Logic Synthesis & Circuit Simulation",
+      desc: "Circuit simulation, RTL logic synthesis, and signal processing using Cadence Virtuoso, GHDL, and MATLAB.",
     },
     {
       number: "05",
-      titlePart1: "REAL ESTATE",
-      titlePart2: "SALES",
+      titlePart1: "3D WEB &",
+      titlePart2: "ARAEL CTO",
       side: "right",
-      icon: Compass,
-      tag: "Diploma",
-      degree: "Diploma in Real Estate Marketing & Sales",
-      desc: "Property positioning, comparative market analysis, buyer psychology & high-ticket closing.",
+      icon: Code2,
+      tag: "Web & Product Systems",
+      degree: "Full-Stack Storefronts & Interactive 3D",
+      desc: "Architecting full-stack e-commerce systems and building scroll-driven Three.js/GSAP interfaces.",
     },
     {
       number: "06",
-      titlePart1: "AI &",
-      titlePart2: "DESIGNING",
+      titlePart1: "SEMICONDUCTOR",
+      titlePart2: "PD & STA",
       side: "left",
-      icon: Bot,
-      tag: "Certification",
-      degree: "Applied Generative Workflows",
-      desc: "Generative AI prompting, Canva visual prototyping & fast marketing workflows.",
+      icon: Compass,
+      tag: "2028 Career Track",
+      degree: "Physical Design & Timing Analysis Track",
+      desc: "Preparing for core semiconductor Physical Design (PD) and Static Timing Analysis (STA) engineering roles.",
     },
   ];
 
-  // Desktop S-bend SVG ribbon path with circular loops
+  // Desktop S-bend SVG ribbon path ending precisely at center-bottom (x=500 / 50%, y=1800 / 100%)
   const desktopPathString = `
     M 500 20
     C 520 60, 600 80, 660 140
@@ -101,27 +103,28 @@ export default function Education() {
     C 370 1130, 300 1150, 360 1260
     C 450 1400, 600 1310, 670 1370
     C 740 1440, 750 1520, 660 1580
-    C 550 1650, 410 1590, 340 1660
-    C 280 1720, 320 1770, 400 1780
-    C 480 1790, 500 1770, 500 1800
+    C 550 1650, 410 1590, 340 1640
+    C 290 1675, 320 1720, 410 1740
+    C 480 1755, 500 1775, 500 1800
   `;
 
-  // Mobile winding SVG path running down the side with loops
+  // Mobile winding SVG path running along the left gutter and sweeping into center-bottom (x=200 / 50%, y=1800 / 100%)
   const mobilePathString = `
-    M 25 10
-    C 35 100, 15 200, 25 320
-    C 38 350, 45 390, 38 420
-    C 30 450, 12 430, 18 400
-    C 24 370, 36 390, 25 460
-    C 15 580, 35 700, 25 820
-    C 38 850, 45 890, 38 920
-    C 30 950, 12 930, 18 900
-    C 24 870, 36 890, 25 960
-    C 15 1080, 35 1200, 25 1320
-    C 38 1350, 45 1390, 38 1420
-    C 30 1450, 12 1430, 18 1400
-    C 24 1370, 36 1390, 25 1460
-    C 15 1580, 35 1700, 25 1800
+    M 28 10
+    C 40 100, 18 200, 28 320
+    C 44 350, 52 390, 42 420
+    C 32 450, 14 430, 20 400
+    C 26 370, 40 390, 28 460
+    C 18 580, 40 700, 28 820
+    C 44 850, 52 890, 42 920
+    C 32 950, 14 930, 20 900
+    C 26 870, 40 890, 28 960
+    C 18 1080, 40 1200, 28 1320
+    C 44 1350, 52 1390, 42 1420
+    C 32 1450, 14 1430, 20 1400
+    C 26 1370, 40 1390, 28 1460
+    C 18 1560, 28 1640, 60 1690
+    C 110 1750, 200 1740, 200 1800
   `;
 
   useEffect(() => {
@@ -131,6 +134,7 @@ export default function Education() {
     const container = containerRef.current;
     const dPath = desktopPathRef.current;
     const mPath = mobilePathRef.current;
+    const dockEl = dockRef.current;
     if (!container) return;
 
     // Desktop length & setup
@@ -153,7 +157,7 @@ export default function Education() {
     const st = ScrollTrigger.create({
       trigger: container,
       start: 'top 75%',
-      end: 'bottom 80%',
+      end: 'bottom 68%',
       scrub: 0.4,
       onUpdate: (self) => {
         const progress = self.progress;
@@ -169,13 +173,22 @@ export default function Education() {
         // Activate nodes dynamically as the orange ribbon reaches each position
         nodeRefs.current.forEach((node, idx) => {
           if (!node) return;
-          const activationThreshold = (idx + 0.1) / 6;
+          const activationThreshold = (idx + 0.1) / 6.3;
           if (progress >= activationThreshold) {
             node.classList.add('node-active');
           } else {
             node.classList.remove('node-active');
           }
         });
+
+        // Activate terminal docking node right as path completes onto Contact border
+        if (dockEl) {
+          if (progress >= 0.94) {
+            dockEl.classList.add('dock-active');
+          } else {
+            dockEl.classList.remove('dock-active');
+          }
+        }
       },
     });
 
@@ -185,13 +198,13 @@ export default function Education() {
   }, []);
 
   return (
-    <section id="credentials" className="py-16 sm:py-24 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
+    <section id="credentials" className="pt-16 sm:pt-24 pb-0 px-4 sm:px-6 lg:px-8 relative z-20">
       <div className="max-w-5xl mx-auto">
         
         {/* Section Header */}
         <div className="text-center mb-16 sm:mb-20">
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-[#121212] tracking-tight flex items-center justify-center gap-2">
-            <span>Education & Certifications</span>
+            <span>Education &amp; Engineering Path</span>
             <DoodleSparkle className="w-7 h-7 text-[#1A1A1A] hidden sm:inline-block" strokeColor="#1A1A1A" />
           </h2>
 
@@ -200,12 +213,12 @@ export default function Education() {
           </div>
 
           <p className="font-hand text-lg sm:text-xl text-stone-600 mt-2 max-w-xl mx-auto">
-            Business coursework at IIM Bangalore alongside specialized certifications in sales and marketing.
+            B.Tech ECE at CCET Chandigarh alongside VLSI lab work, 3D web engineering, and startup tech.
           </p>
         </div>
 
-        {/* Vertical Scroll-Driven Winding SVG Pathway Container */}
-        <div ref={containerRef} className="relative py-4">
+        {/* Vertical Scroll-Driven Winding SVG Pathway Container (extends cleanly to y=100% bottom seam) */}
+        <div ref={containerRef} className="relative pt-4 pb-20 sm:pb-24">
           
           {/* Desktop SVG Pathway (Hidden on mobile, visible on md:) */}
           <div className="hidden md:block absolute inset-0 pointer-events-none z-0">
@@ -239,9 +252,9 @@ export default function Education() {
           </div>
 
           {/* Mobile SVG Pathway (Visible on mobile, hidden on md:) */}
-          <div className="block md:hidden absolute left-3 top-8 bottom-8 w-10 pointer-events-none z-0">
+          <div className="block md:hidden absolute inset-0 pointer-events-none z-0">
             <svg
-              viewBox="0 0 50 1800"
+              viewBox="0 0 400 1800"
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
               className="w-full h-full"
@@ -253,6 +266,7 @@ export default function Education() {
                 stroke="rgba(217, 78, 31, 0.2)"
                 strokeWidth="5"
                 strokeLinecap="round"
+                strokeLinejoin="round"
                 fill="none"
               />
               {/* Mobile Active Scroll-Drawn Path */}
@@ -262,6 +276,7 @@ export default function Education() {
                 stroke="#D94E1F"
                 strokeWidth="5"
                 strokeLinecap="round"
+                strokeLinejoin="round"
                 fill="none"
               />
             </svg>
@@ -365,6 +380,16 @@ export default function Education() {
                 </div>
               );
             })}
+          </div>
+
+          {/* Terminal Circular Docking Node & Arrow anchored directly onto the top border of Contact below */}
+          <div
+            ref={dockRef}
+            className="pathway-dock absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1/2 z-20 flex flex-col items-center pointer-events-none"
+          >
+            <div className="w-10 h-10 rounded-full border-[2.5px] flex items-center justify-center dock-circle">
+              <ArrowDown size={18} className="stroke-[2.5]" />
+            </div>
           </div>
 
         </div>

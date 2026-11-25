@@ -1,6 +1,6 @@
-# Koushhiki Roy — Personal Portfolio
+# Naman Mishra — Engineering & Creative Development Portfolio
 
-> Tactile, hand-crafted personal portfolio website for **Koushhiki Roy** (Digital Marketing & Sales student at **IIM Bangalore**, BBA DBE 2026–2029, based in Kolkata). Inspired by the tactile, play-focused stationery aesthetic of [webdesign.kernjosh.com](https://webdesign.kernjosh.com).
+> Tactile, hand-crafted personal portfolio website for **Naman Mishra** (3D web engineering, product systems, and B.Tech ECE student at **CCET Chandigarh**, Class of 2028). Built with Vite, React, Tailwind CSS, Lenis smooth scroll, and GSAP ScrollTrigger.
 
 ---
 
@@ -10,55 +10,30 @@
 - **Typography Pairing:**
   - **Headings & Body:** *Plus Jakarta Sans* & *Newsreader* (Google Fonts).
   - **Handwritten Annotations:** *Caveat* & *Kalam* for editorial highlights.
-  - **Monospace Telemetry:** *JetBrains Mono* for timestamps, codes, and metrics.
-- **Physical Skeuomorphism:** Translucent washi tape strips, metal paperclips, 3D flippable polaroid frames, and rubber stamp badges.
-- **Hand-Drawn Ink SVG Doodles:**
-  - Squiggly underlines that draw themselves on scroll with `stroke-dashoffset` animations.
-  - Curved pointer arrows guiding visitors to key interactions.
-  - Looped circle highlights around key metrics (`50+`, `200+`).
-  - Ink-black sparkle clusters and rough index-card dividers.
-- **Procedural Tactile Audio:** Zero-latency Web Audio API mechanical clicks, paper pops, and pencil ticks (with one-click mute toggle).
+  - **Monospace Telemetry:** *JetBrains Mono* for timestamps, tags, and metrics.
+- **Physical Skeuomorphism:** Translucent washi tape strips, metal paperclips, 3D flippable polaroid ID card, and rubber stamp badges.
+- **Hand-Drawn Ink SVG Doodles & Winding SVG Pathway:**
+  - Self-drawing squiggly underlines, curved pointer arrows, loop circles, and sparkle accents animated via `stroke-dashoffset` and GSAP ScrollTrigger.
+  - Full-width S-bend terracotta (`#D94E1F`) scroll-driven pathway timeline with circular loops across 6 alternating education & engineering milestones.
 
 ---
 
 ## 🚀 Sections & Features
 
-1. **Minimal Top Navigation:** Monogram badge `KR`, section anchors, live Kolkata clock with pulsing status dot, audio toggle, and "Save Resume (PDF)" trigger.
-2. **Hero Section:** Large expressive intro, 3 metric ribbons, CTA buttons, and a 3D flippable Polaroid photo card revealing her *Quick Dossier*.
-3. **Apple Notes About Entry:** Authentic, raw Apple Note on ruled-line paper with thin 1px dividers, generous whitespace, interactive circular check items, subtle yellow text-highlighter marks, and plainspoken copy.
-4. **Experience Dossier Briefs:**
-   - **Team Taurus (Sales Intern, 2026 – Present):** Live in-person pitching, attention to detail, 50+ clients stamp badge, and expandable pitch playbook.
-   - **Dublieu (Marketing Intern, 2023 – Dec 2024):** Cold outreach, MUN events, small business invitations, 200+ conversions badge, and cold call script breakdown.
-5. **Stacked Index Cards (Education & Credentials):**
-   - IIM Bangalore (BBA DBE, 2026–2029)
-   - Holy Mother’s Academy (Class XII, 2026)
-   - DPS Megacity (Class X, 2023)
-   - Clever Harvey (Junior CEO, Junior CMO, Junior CFO)
-   - Diploma in Real Estate Marketing & Sales
-   - AI Tools & Designing Certification
-6. **iOS Mail Contact Composer:** Interactive email composer card pre-filled with `koushhikiroy@gmail.com`, 4 topic selector pills generating real-time drafts, and one-click copy buttons for email, phone (+91 898 1788 534), and LinkedIn.
-7. **Executive Print Resume (`@media print`):** Clicking "Save Resume (PDF)" prints an immaculate 1-page corporate resume, hiding web decor automatically.
-
----
-
-## 🛠️ Tech Stack
-
-- **Framework:** [React 19](https://react.dev/) + [Vite](https://vite.dev/)
-- **Styling:** [Tailwind CSS](https://tailwindcss.com/)
-- **Smooth Scrolling:** [Lenis](https://github.com/darkroomengineering/lenis)
-- **Animations:** [GSAP](https://gsap.com/) + ScrollTrigger (for 3D card tilt and drawn-on strokes)
-- **Icons:** [Lucide React](https://lucide.dev/) + Custom SVG Doodles
-- **Celebration:** [Canvas Confetti](https://github.com/catdad/canvas-confetti)
+1. **Minimal Top Navigation:** Monogram badge `NM`, `B.Tech ECE ’28 • Chandigarh, India`, section anchors, live Chandigarh IST clock, and **View GitHub** CTA.
+2. **Hero Section:** Expressive headline (`"3D web engineering, product systems, and tactile UI."`), 3 metric cards (`120-Frame`, `CTO`, `Full-Stack`), availability note, and 3D flippable ID card showing Naman's 3 core engineering pillars.
+3. **Apple Notes About Entry (`The Studio & Engineering Memo`):** Authentic raw Apple Note on ruled-line paper with thin 1px dividers, yellow highlighter accents, interactive Working Stack checklist, and copyable text.
+4. **Builds & Leadership:**
+   - **ARAEL WEARS — Chief Technology Officer (CTO):** Custom e-commerce storefront, Qikink POD + Razorpay integration, and retro cutscene lookbook direction.
+   - **Independent Engineering Builds — 3D Web & Systems Developer:** 120-frame scroll-driven 3D product showcase, dark editorial web concepts, and Python 3.11 NSE/BSE Equity Research CLI.
+5. **Winding SVG Pathway (`Education & Engineering Path`):** Scroll-scrubbed S-bend ribbon connecting CCET Chandigarh, GMSSS-37, Satluj Public School, VLSI & Hardware Labs, 3D Web & ARAEL CTO, and Physical Design & STA track.
+6. **iOS Mail Contact Composer:** Interactive email composer pre-filled for `mishranaman2411@gmail.com`, 4 topic selector pills generating real-time drafts, and one-click copy buttons for Email, Phone/WhatsApp (`+91 90154 99931`), and GitHub (`github.com/mishranaman2411-eng`).
 
 ---
 
 ## 💻 Getting Started
 
 ```bash
-# Clone the repository
-git clone https://github.com/mishranaman2411-eng/kaushikki-portfolio.git
-cd kaushikki-portfolio
-
 # Install dependencies
 npm install
 

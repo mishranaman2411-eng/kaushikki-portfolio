@@ -42,7 +42,7 @@ export default function App() {
               ease: 'power2.out',
               scrollTrigger: {
                 trigger: el,
-                start: 'top 85%',
+                start: selector === '#contact' ? 'top 95%' : 'top 85%',
                 toggleActions: 'play none none none',
                 onEnter: () => el.classList.add('is-visible'),
               },
@@ -143,10 +143,10 @@ export default function App() {
           {/* Apple Notes "About" Widget */}
           <AppleNotesAbout />
 
-          {/* Experience Cards (Tactile Briefs: Team Taurus & Dublieu) */}
+          {/* Builds & Leadership Cards (ARAEL WEARS & Independent Engineering Builds) */}
           <Experience />
 
-          {/* Education & Stacked Index Cards & Certifications */}
+          {/* Winding SVG Pathway (Education & Engineering Path) */}
           <Education />
 
           {/* iOS Mail "Contact" Composer */}

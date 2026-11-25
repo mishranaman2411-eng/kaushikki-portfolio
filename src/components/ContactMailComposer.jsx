@@ -1,87 +1,82 @@
 import React, { useState } from 'react';
-import { 
-  Mail, 
-  Phone, 
-  Send, 
-  Copy, 
-  Check, 
-  Sparkles, 
-  ExternalLink, 
-  MessageCircle, 
-  PhoneCall,
-  CheckCheck,
-  Paperclip,
-  Share2,
-  X
+import {
+  Mail,
+  Phone,
+  Send,
+  Copy,
+  Sparkles,
+  ExternalLink,
+  MessageCircle,
+  CheckCheck
 } from 'lucide-react';
-import { playClick, playPop, playCheck } from '../utils/sound';
+import { playClick, playPop } from '../utils/sound';
 import confetti from 'canvas-confetti';
-import { 
-  DoodleUnderline, 
-  DoodleArrow, 
-  DoodleCircle, 
-  DoodleSparkle, 
-  DoodleDivider, 
-  LinkedinIcon 
+import {
+  DoodleUnderline,
+  DoodleArrow,
+  DoodleSparkle,
+  GithubIcon
 } from './HandDrawn';
 
 export default function ContactMailComposer() {
   const [copiedItem, setCopiedItem] = useState(null);
-  const [selectedTopic, setSelectedTopic] = useState('internship');
+  const [selectedTopic, setSelectedTopic] = useState('3d-web');
   const [senderEmail, setSenderEmail] = useState('');
   const [customMessage, setCustomMessage] = useState('');
   const [messageSentFeedback, setMessageSentFeedback] = useState(false);
 
   const topics = [
     {
-      id: 'internship',
-      label: '💼 Summer / Growth Internship',
-      subject: 'Internship Opportunity: Koushhiki Roy x [Your Company]',
-      defaultBody: `Hi Koushhiki,
+      id: '3d-web',
+      label: '🌐 3D / Interactive Website',
+      subject: 'Project Inquiry: Interactive 3D Web Build x Naman Mishra',
+      defaultBody: `Hi Naman,
 
-I came across your portfolio and was impressed by your hands-on sales track record at Team Taurus and Dublieu, alongside your BBA DBE studies at IIM Bangalore.
+I came across your portfolio and loved your work on scroll-driven 3D interfaces and 120-frame interactive showcases.
 
-We have an exciting opportunity in sales & marketing that matches your background in consultative pitching and outbound conversion. Let’s connect for a 15-minute introductory call!
+We are looking to build an interactive website with strong editorial typography and smooth GSAP/Three.js motion. Let's schedule a quick call to discuss scope and timelines.
 
 Best regards,`
     },
     {
-      id: 'sales',
-      label: '📈 Sales Strategy & Client Pitching',
-      subject: 'Inquiry: Sales Outreach & In-Person Pitching Consultation',
-      defaultBody: `Hi Koushhiki,
+      id: 'ecommerce',
+      label: '🛍️ E-Commerce Storefront',
+      subject: 'Inquiry: Custom E-Commerce Storefront & Checkout Architecture',
+      defaultBody: `Hi Naman,
 
-I'd love to chat with you about your experience pitching to 50+ live clients and converting 200+ delegates. We’re currently looking to optimize our outbound sales approach and would appreciate your fresh perspective.
+I saw your CTO architecture work for ARAEL WEARS and would love to discuss building a custom storefront for our brand with automated fulfillment and Razorpay checkout integration.
 
-Let me know when you might be free for a conversation!
+Let me know when you're free to chat!
 
-Warm regards,`
+Best,`
     },
     {
-      id: 'creative',
-      label: '🎨 Decks, Canva & Visual Marketing',
-      subject: 'Collaboration: High-Impact Pitch Decks & Marketing Creatives',
-      defaultBody: `Hi Koushhiki,
+      id: 'ui-ux',
+      label: '🎨 Editorial UI/UX Redesign',
+      subject: 'Collaboration: Tactile Editorial UI/UX Redesign',
+      defaultBody: `Hi Naman,
 
-Your blend of strategic sales thinking and visual design skills in Canva and video editing caught my attention. We're developing new collateral and would love to explore collaborating with you.
+Your tactile approach to UI engineering caught our eye. We want to overhaul our current web presence away from generic templates into something custom, fast, and memorable.
 
-Looking forward to hearing from you!
+Looking forward to connecting!
 
 Cheers,`
     },
     {
-      id: 'coffee',
-      label: '☕ Virtual Coffee / Networking',
-      subject: 'Quick connect / Virtual Coffee with Koushhiki Roy',
-      defaultBody: `Hi Koushhiki,
+      id: 'internship',
+      label: '💻 Internship / Tech Collaboration',
+      subject: 'Opportunity: Tech Internship / Engineering Collaboration',
+      defaultBody: `Hi Naman,
 
-Loved exploring your tactile portfolio! As someone also interested in sales, marketing, and the IIM ecosystem, I'd love to connect for a casual virtual coffee and exchange notes.
+We checked out your builds and B.Tech ECE background at CCET Chandigarh. We have an engineering role/collaboration in frontend, Python tooling, or core systems that aligns well with your skill set.
 
-Best,`
+Let us know when we can connect for an introductory chat!
+
+Warm regards,`
     }
   ];
 
-  const currentTopic = topics.find(t => t.id === selectedTopic) || topics[0];
+  const currentTopic = topics.find((t) => t.id === selectedTopic) || topics[0];
   const activeSubject = currentTopic.subject;
   const activeBody = customMessage || currentTopic.defaultBody;
 
@@ -108,15 +103,15 @@ Best,`
   const handleSendMail = (e) => {
     e.preventDefault();
     playPop();
-    const mailtoUrl = `mailto:koushhikiroy@gmail.com?subject=${encodeURIComponent(activeSubject)}&body=${encodeURIComponent(activeBody)}`;
+    const mailtoUrl = `mailto:mishranaman2411@gmail.com?subject=${encodeURIComponent(activeSubject)}&body=${encodeURIComponent(activeBody)}`;
     window.location.href = mailtoUrl;
     setMessageSentFeedback(true);
     setTimeout(() => setMessageSentFeedback(false), 4000);
   };
 
   return (
-    <section id="contact" className="py-12 sm:py-20 px-4 sm:px-6 lg:px-8 relative">
-      <div className="max-w-4xl mx-auto">
+    <section id="contact" className="pt-0 pb-12 sm:pb-20 px-4 sm:px-6 lg:px-8 relative z-10">
+      <div className="max-w-4xl mx-auto border-t-[2px] border-[#D94E1F] pt-12 sm:pt-14">
         
         {/* Section Header */}
         <div className="text-center mb-10 sm:mb-14">
@@ -145,11 +140,11 @@ Best,`
               </div>
               <div className="truncate">
                 <span className="text-[10px] font-mono uppercase text-[#625E56] block font-bold">Email</span>
-                <span className="text-xs font-bold text-[#121212] truncate block">koushhikiroy@gmail.com</span>
+                <span className="text-xs font-bold text-[#121212] truncate block">mishranaman2411@gmail.com</span>
               </div>
             </div>
             <button
-              onClick={() => copyToClipboard('koushhikiroy@gmail.com', 'email')}
+              onClick={() => copyToClipboard('mishranaman2411@gmail.com', 'email')}
               className="tactile-btn p-1.5 rounded-lg bg-neutral-100 hover:bg-[#FEF08A] text-[#121212] transition-colors flex-shrink-0 ml-2"
               title="Copy email to clipboard"
             >
@@ -165,12 +160,12 @@ Best,`
               </div>
               <div className="truncate">
                 <span className="text-[10px] font-mono uppercase text-[#625E56] block font-bold">Phone / WhatsApp</span>
-                <span className="text-xs font-bold text-[#121212] truncate block">+91 898 1788 534</span>
+                <span className="text-xs font-bold text-[#121212] truncate block">+91 90154 99931</span>
               </div>
             </div>
             <div className="flex items-center gap-1 flex-shrink-0 ml-2">
               <a
-                href="https://wa.me/918981788534"
+                href="https://wa.me/919015499931"
                 target="_blank"
                 rel="noreferrer"
                 className="tactile-btn p-1.5 rounded-lg bg-emerald-100 hover:bg-emerald-200 text-emerald-800 transition-colors"
@@ -179,7 +174,7 @@ Best,`
                 <MessageCircle size={14} />
               </a>
               <button
-                onClick={() => copyToClipboard('+91 898 1788 534', 'phone')}
+                onClick={() => copyToClipboard('+91 90154 99931', 'phone')}
                 className="tactile-btn p-1.5 rounded-lg bg-neutral-100 hover:bg-[#FEF08A] text-[#121212] transition-colors"
                 title="Copy phone number"
               >
@@ -188,33 +183,40 @@ Best,`
             </div>
           </div>
 
-          {/* LinkedIn Card */}
+          {/* GitHub Card */}
           <div className="tactile-card p-3.5 rounded-2xl bg-white border-[1.8px] border-[#121212] flex items-center justify-between group">
             <div className="flex items-center gap-2.5 overflow-hidden">
-              <div className="w-8 h-8 rounded-xl bg-sky-50 text-sky-700 border border-sky-200 flex items-center justify-center flex-shrink-0">
-                <LinkedinIcon size={16} />
+              <div className="w-8 h-8 rounded-xl bg-neutral-100 text-[#121212] border border-neutral-300 flex items-center justify-center flex-shrink-0">
+                <GithubIcon size={16} />
               </div>
               <div className="truncate">
-                <span className="text-[10px] font-mono uppercase text-[#625E56] block font-bold">LinkedIn</span>
-                <span className="text-xs font-bold text-[#121212] truncate block">/in/koushhikiroy</span>
+                <span className="text-[10px] font-mono uppercase text-[#625E56] block font-bold">GitHub</span>
+                <a
+                  href="https://github.com/mishranaman2411-eng"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="text-xs font-bold text-[#121212] hover:underline truncate block"
+                >
+                  github.com/mishranaman2411-eng
+                </a>
               </div>
             </div>
             <div className="flex items-center gap-1 flex-shrink-0 ml-2">
               <a
-                href="https://www.linkedin.com/in/koushhikiroy"
+                href="https://github.com/mishranaman2411-eng"
                 target="_blank"
                 rel="noreferrer"
-                className="tactile-btn p-1.5 rounded-lg bg-sky-100 hover:bg-sky-200 text-sky-800 transition-colors"
-                title="Open LinkedIn Profile"
+                className="tactile-btn p-1.5 rounded-lg bg-[#FEF08A] hover:bg-[#FDE047] text-[#121212] transition-colors"
+                title="Open GitHub Profile"
               >
                 <ExternalLink size={14} />
               </a>
               <button
-                onClick={() => copyToClipboard('https://www.linkedin.com/in/koushhikiroy', 'linkedin')}
+                onClick={() => copyToClipboard('https://github.com/mishranaman2411-eng', 'github')}
                 className="tactile-btn p-1.5 rounded-lg bg-neutral-100 hover:bg-[#FEF08A] text-[#121212] transition-colors"
-                title="Copy LinkedIn URL"
+                title="Copy GitHub URL"
               >
-                {copiedItem === 'linkedin' ? <CheckCheck size={14} className="text-emerald-700" /> : <Copy size={14} />}
+                {copiedItem === 'github' ? <CheckCheck size={14} className="text-emerald-700" /> : <Copy size={14} />}
               </button>
             </div>
           </div>
@@ -234,7 +236,7 @@ Best,`
           
           {/* iOS Mail Modal Bar */}
           <div className="bg-[#F6F4ED] border-b border-[#E5E0D5] px-4 sm:px-6 py-3 flex items-center justify-between select-none">
-            <button 
+            <button
               type="button"
               onClick={() => {
                 playClick();
@@ -266,8 +268,8 @@ Best,`
               <span className="font-mono text-xs text-[#8C867A] w-14">To:</span>
               <div className="flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-blue-50 border border-blue-200 text-xs font-semibold text-blue-900">
                 <span className="w-2 h-2 rounded-full bg-blue-500"></span>
-                <span>koushhikiroy@gmail.com</span>
-                <span className="text-[10px] text-blue-700 font-mono">(Koushhiki Roy)</span>
+                <span>mishranaman2411@gmail.com</span>
+                <span className="text-[10px] text-blue-700 font-mono">(Naman Mishra)</span>
               </div>
             </div>
 
@@ -354,13 +356,13 @@ Best,`
                 className="w-full sm:w-auto tactile-btn flex items-center justify-center gap-2 px-5 py-2.5 rounded-xl bg-blue-600 text-white text-xs sm:text-sm font-bold hover:bg-blue-700"
               >
                 <Send size={14} />
-                <span>Open in Mail App & Send</span>
+                <span>Open in Mail App &amp; Send</span>
               </button>
             </div>
 
             {messageSentFeedback && (
               <div className="p-3 bg-emerald-50 border border-emerald-300 rounded-xl text-center text-xs font-mono text-emerald-800 animate-in fade-in">
-                ✓ Launching your device’s default mail app to send to koushhikiroy@gmail.com!
+                ✓ Launching your device’s default mail app to send to mishranaman2411@gmail.com!
               </div>
             )}
 

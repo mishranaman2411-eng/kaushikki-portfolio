@@ -1,25 +1,15 @@
 import React from 'react';
-import { 
-  Briefcase, 
-  Flame, 
-  PhoneCall, 
-  Users, 
-  Target, 
-  Sparkles, 
-  ArrowUpRight, 
-  CheckCircle2, 
-  Layers, 
-  FileText,
-  ShieldCheck
+import {
+  Target,
+  CheckCircle2
 } from 'lucide-react';
-import { 
-  DoodleUnderline, 
-  DoodleArrow, 
-  DoodleCircle, 
-  DoodleSparkle, 
-  DoodleDivider, 
-  TactileStamp, 
-  PaperClip 
+import {
+  DoodleUnderline,
+  DoodleCircle,
+  DoodleSparkle,
+  DoodleDivider,
+  TactileStamp,
+  PaperClip
 } from './HandDrawn';
 
 export default function Experience() {
@@ -30,7 +20,7 @@ export default function Experience() {
         {/* Section Header */}
         <div className="text-center mb-10 sm:mb-14">
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-[#121212] tracking-tight flex items-center justify-center gap-2">
-            <span>Experience</span>
+            <span>Builds &amp; Leadership</span>
             <DoodleSparkle className="w-7 h-7 text-[#1A1A1A] hidden sm:inline-block" strokeColor="#1A1A1A" />
           </h2>
 
@@ -39,14 +29,14 @@ export default function Experience() {
           </div>
 
           <p className="font-hand text-lg sm:text-xl text-stone-600 mt-2 max-w-xl mx-auto">
-            Client pitching, outbound campaigns, and field sales.
+            Production storefronts, 3D web architecture, and engineering systems.
           </p>
         </div>
 
         {/* Experience Dossier Cards Stack */}
         <div className="space-y-8">
           
-          {/* Card 1: Team Taurus — Sales Intern */}
+          {/* Card 1: ARAEL WEARS — Chief Technology Officer (CTO) */}
           <div className="relative bg-white border-[2px] border-[#121212] rounded-3xl p-6 sm:p-8 lg:p-10 shadow-tactile-lg transition-all hover:shadow-tactile-hover group">
             
             {/* Corner Washi Tape */}
@@ -61,28 +51,28 @@ export default function Experience() {
               <div>
                 <div className="flex items-center gap-2.5 flex-wrap">
                   <span className="font-mono text-xs font-bold uppercase tracking-wider px-2.5 py-0.5 rounded-full bg-orange-100 text-orange-900 border border-orange-300">
-                    Live Client Sales
+                    E-Commerce &amp; Brand Tech
                   </span>
                   <span className="font-mono text-xs text-[#625E56]">
-                    2026 – Present • Kolkata, India
+                    2026 – Present • Chandigarh, India
                   </span>
                 </div>
 
                 <h3 className="text-2xl sm:text-3xl font-black text-[#121212] mt-2">
-                  Team Taurus
+                  ARAEL WEARS
                 </h3>
 
                 <p className="text-sm sm:text-base font-semibold text-orange-800">
-                  Sales Intern — In-Person Pitching & Client Acquisition
+                  Chief Technology Officer (CTO)
                 </p>
               </div>
 
-              {/* 50+ Clients Badge Stamp with Hand-Drawn Circle Loop */}
+              {/* Tactile Badge Stamp with Hand-Drawn Circle Loop */}
               <div className="relative flex-shrink-0 self-start group/stamp mt-1 sm:mt-0">
                 <div className="absolute -inset-3 pointer-events-none z-20">
                   <DoodleCircle className="w-full h-full text-[#1A1A1A]" strokeColor="#1A1A1A" />
                 </div>
-                <TactileStamp label="IN-PERSON PITCH" count="50+ CLIENTS" color="orange" />
+                <TactileStamp label="STREETWEAR TECH" count="300 GSM POD" sublabel="CTO • full-stack" color="orange" />
               </div>
             </div>
 
@@ -90,60 +80,71 @@ export default function Experience() {
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 pt-6">
               <div className="lg:col-span-8 space-y-4">
                 <p className="text-sm sm:text-base text-[#282828] leading-relaxed">
-                  Handled one-on-one buyer walkthroughs and property pitches at Team Taurus, breaking down pricing, floor plans, and investment value for prospective homebuyers.
+                  Leading end-to-end technical architecture and storefront engineering for ARAEL WEARS, a streetwear label focused on heavyweight 300 GSM hoodies.
                 </p>
 
                 <div className="space-y-2.5 pt-1">
                   <h4 className="text-xs font-mono font-bold uppercase tracking-wider text-[#625E56] flex items-center gap-1.5">
                     <Target size={14} className="text-orange-600" />
-                    <span>Key Responsibilities & Operational Wins</span>
+                    <span>Architecture &amp; Engineering Deliverables</span>
                   </h4>
 
                   <ul className="space-y-2 text-xs sm:text-sm text-[#282828]">
                     <li className="flex items-start gap-2.5">
                       <CheckCircle2 size={16} className="text-emerald-600 flex-shrink-0 mt-0.5" />
-                      <span><strong>50+ Live In-Person Pitches:</strong> Personally presented project portfolios to over 50 prospective buyers, diagnosing unique budget limits and aesthetic desires.</span>
+                      <span><strong>Custom E-Commerce Storefront:</strong> Engineered a high-conversion web storefront with interactive product inspection modals and mobile-first lookbook layouts.</span>
                     </li>
                     <li className="flex items-start gap-2.5">
                       <CheckCircle2 size={16} className="text-emerald-600 flex-shrink-0 mt-0.5" />
-                      <span><strong>Product & Blueprint Mastery:</strong> Memorized complex project architectural blueprints, payment milestones, and statutory clearances to address buyer skepticism instantly.</span>
+                      <span><strong>Fulfillment &amp; Payment Pipeline:</strong> Architected automated print-on-demand order routing via Qikink alongside seamless Razorpay checkout integration.</span>
                     </li>
                     <li className="flex items-start gap-2.5">
                       <CheckCircle2 size={16} className="text-emerald-600 flex-shrink-0 mt-0.5" />
-                      <span><strong>Objection Handling:</strong> Re-framed client hesitations on possession timelines and financing into clear risk-mitigated options, maintaining strong lead momentum.</span>
+                      <span><strong>Retro Cutscene Visual Direction:</strong> Produced custom 16:9 and 9:16 lookbook hero animations styled after classic PS2/PS4-era cutscenes.</span>
                     </li>
                   </ul>
                 </div>
               </div>
 
-              {/* Right Column: Tactile Spec Box */}
+              {/* Right Column: Tactile Scorecard */}
               <div className="lg:col-span-4 bg-[#FAF8F5] rounded-2xl border-[1.5px] border-[#121212] p-4 sm:p-5 flex flex-col justify-between space-y-4">
                 <div>
                   <div className="font-mono text-[11px] font-bold uppercase text-[#625E56] border-b border-[#E2DED5] pb-1.5 mb-2.5 flex items-center justify-between">
-                    <span>Overview</span>
-                    <span className="text-emerald-600">Active</span>
+                    <span>SYSTEM OVERVIEW</span>
+                    <span className="text-emerald-600">ACTIVE</span>
                   </div>
 
-                  <div className="space-y-2 text-xs">
+                  <div className="space-y-2.5 text-xs">
                     <div>
-                      <span className="text-[#625E56] block text-[11px]">Primary Skill:</span>
-                      <span className="font-bold text-[#121212]">In-Person Consultative Pitch</span>
+                      <span className="text-[#625E56] block text-[11px]">Primary Focus:</span>
+                      <span className="font-bold text-[#121212]">E-Commerce Architecture &amp; Brand Tech</span>
                     </div>
                     <div>
-                      <span className="text-[#625E56] block text-[11px]">Target Audience:</span>
-                      <span className="font-bold text-[#121212]">HNW Families, Homebuyers & Investors</span>
+                      <span className="text-[#625E56] block text-[11px]">Product Line:</span>
+                      <span className="font-bold text-[#121212]">300 GSM Heavyweight Streetwear</span>
                     </div>
                     <div>
-                      <span className="text-[#625E56] block text-[11px]">Key Metric:</span>
-                      <span className="font-bold text-orange-700 text-sm">50+ In-Person Pitches</span>
+                      <span className="text-[#625E56] block text-[11px]">Key Deliverable:</span>
+                      <span className="font-bold text-orange-700 text-sm">Full-Stack Storefront &amp; POD Pipeline</span>
+                    </div>
+                    <div>
+                      <span className="text-[#625E56] block text-[11px]">Build Flow:</span>
+                      <span className="font-semibold text-[#282828] leading-snug block">
+                        01. UI Prototyping • 02. Storefront Engineering • 03. Qikink &amp; Razorpay Sync • 04. Lookbook Media
+                      </span>
                     </div>
                   </div>
                 </div>
 
-                <div className="pt-2 border-t border-[#E2DED5]">
-                  <span className="font-hand text-xs text-stone-600 block">
-                    Verified through live dealership & site floor presentations.
-                  </span>
+                <div className="pt-2 border-t border-[#E2DED5] flex flex-wrap gap-1.5">
+                  {['Next.js', 'Git', 'Razorpay', 'Qikink'].map((tool) => (
+                    <span
+                      key={tool}
+                      className="text-[10px] font-mono font-bold px-2 py-0.5 rounded bg-white border border-[#D5D0C5] text-[#121212]"
+                    >
+                      {tool}
+                    </span>
+                  ))}
                 </div>
               </div>
             </div>
@@ -155,7 +156,7 @@ export default function Experience() {
             <DoodleDivider className="w-full h-3 text-[#1A1A1A]" strokeColor="#1A1A1A" />
           </div>
 
-          {/* Card 2: Dublieu — Marketing Intern */}
+          {/* Card 2: Independent Engineering Builds — 3D Web & Systems Developer */}
           <div className="relative bg-white border-[2px] border-[#121212] rounded-3xl p-6 sm:p-8 lg:p-10 shadow-tactile-lg transition-all hover:shadow-tactile-hover group">
             
             {/* Corner Washi Tape */}
@@ -170,28 +171,28 @@ export default function Experience() {
               <div>
                 <div className="flex items-center gap-2.5 flex-wrap">
                   <span className="font-mono text-xs font-bold uppercase tracking-wider px-2.5 py-0.5 rounded-full bg-emerald-100 text-emerald-900 border border-emerald-300">
-                    Outbound & Growth
+                    3D Web &amp; Tooling
                   </span>
                   <span className="font-mono text-xs text-[#625E56]">
-                    2023 – Dec 2024 • Kolkata / Remote
+                    2025 – Present • Chandigarh, India
                   </span>
                 </div>
 
                 <h3 className="text-2xl sm:text-3xl font-black text-[#121212] mt-2">
-                  Dublieu
+                  Independent Engineering Builds
                 </h3>
 
                 <p className="text-sm sm:text-base font-semibold text-emerald-800">
-                  Marketing Intern — Cold Outreach, MUN Events & Small Business Partnerships
+                  3D Web &amp; Systems Developer
                 </p>
               </div>
 
-              {/* 200+ Clients Badge Stamp with Hand-Drawn Circle Loop */}
+              {/* 120-Frame Stamp with Hand-Drawn Circle Loop */}
               <div className="relative flex-shrink-0 self-start group/stamp mt-1 sm:mt-0">
                 <div className="absolute -inset-3 pointer-events-none z-20">
                   <DoodleCircle className="w-full h-full text-[#1A1A1A]" strokeColor="#1A1A1A" />
                 </div>
-                <TactileStamp label="COLD OUTREACH" count="200+ CLIENTS" color="green" />
+                <TactileStamp label="SCROLL WEBGL" count="120-FRAME" sublabel="60fps scrub" color="green" />
               </div>
             </div>
 
@@ -199,60 +200,71 @@ export default function Experience() {
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 pt-6">
               <div className="lg:col-span-8 space-y-4">
                 <p className="text-sm sm:text-base text-[#282828] leading-relaxed">
-                  Ran outbound sales and sponsorship outreach at Dublieu for youth conferences and MUN events, pitching parents, schools, and local Kolkata businesses over phone, email, and WhatsApp.
+                  Designing and engineering interactive 3D web experiences, editorial brand concepts, and local Python developer tools.
                 </p>
 
                 <div className="space-y-2.5 pt-1">
                   <h4 className="text-xs font-mono font-bold uppercase tracking-wider text-[#625E56] flex items-center gap-1.5">
                     <Target size={14} className="text-emerald-700" />
-                    <span>Outbound Engine & Deliverables</span>
+                    <span>Selected Builds &amp; Systems</span>
                   </h4>
 
                   <ul className="space-y-2 text-xs sm:text-sm text-[#282828]">
                     <li className="flex items-start gap-2.5">
                       <CheckCircle2 size={16} className="text-emerald-600 flex-shrink-0 mt-0.5" />
-                      <span><strong>200+ Converted Leads & Delegates:</strong> Dialed hundreds of calls to parents and high school students, answering queries regarding academic accreditation, safety, and debate prestige.</span>
+                      <span><strong>Scroll-Scrubbed 3D Product Experience:</strong> Built a 120-frame scroll-driven 360° interactive 3D showcase paired with a two-step interactive order and receipt checkout UI.</span>
                     </li>
                     <li className="flex items-start gap-2.5">
                       <CheckCircle2 size={16} className="text-emerald-600 flex-shrink-0 mt-0.5" />
-                      <span><strong>Small Business Partner Invitations:</strong> Contacted and pitched local Kolkata cafe owners, merchandise creators, and educational publishers to sponsor youth summits.</span>
+                      <span><strong>Dark Editorial Web Architecture:</strong> Designed and engineered high-contrast minimalist web concepts with custom typography and GSAP scroll choreography.</span>
                     </li>
                     <li className="flex items-start gap-2.5">
                       <CheckCircle2 size={16} className="text-emerald-600 flex-shrink-0 mt-0.5" />
-                      <span><strong>Multi-Touch Cadence:</strong> Orchestrated email, phone, and WhatsApp sequences that achieved sustained response rates above industry benchmarks.</span>
+                      <span><strong>NSE/BSE Equity Research CLI:</strong> Engineered a local Python 3.11 command-line financial analysis tool using pandas, yfinance, SQLite, and pydantic.</span>
                     </li>
                   </ul>
                 </div>
               </div>
 
-              {/* Right Column: Tactile Spec Box */}
+              {/* Right Column: Tactile Scorecard */}
               <div className="lg:col-span-4 bg-[#FAF8F5] rounded-2xl border-[1.5px] border-[#121212] p-4 sm:p-5 flex flex-col justify-between space-y-4">
                 <div>
                   <div className="font-mono text-[11px] font-bold uppercase text-[#625E56] border-b border-[#E2DED5] pb-1.5 mb-2.5 flex items-center justify-between">
-                    <span>Overview</span>
-                    <span className="text-emerald-600">Completed</span>
+                    <span>BUILD TELEMETRY</span>
+                    <span className="text-emerald-600">SHIPPED</span>
                   </div>
 
-                  <div className="space-y-2 text-xs">
+                  <div className="space-y-2.5 text-xs">
                     <div>
-                      <span className="text-[#625E56] block text-[11px]">Outbound Channels:</span>
-                      <span className="font-bold text-[#121212]">Phone, Email Sequences, WhatsApp</span>
+                      <span className="text-[#625E56] block text-[11px]">Core Craft:</span>
+                      <span className="font-bold text-[#121212]">Scroll-Driven 3D &amp; Editorial UI</span>
                     </div>
                     <div>
-                      <span className="text-[#625E56] block text-[11px]">Ecosystem:</span>
-                      <span className="font-bold text-[#121212]">Model United Nations (MUN) & Vendors</span>
+                      <span className="text-[#625E56] block text-[11px]">Deployments:</span>
+                      <span className="font-bold text-[#121212]">GitHub, Vercel &amp; Local CLI</span>
                     </div>
                     <div>
-                      <span className="text-[#625E56] block text-[11px]">Converted Volume:</span>
-                      <span className="font-bold text-emerald-700 text-sm">200+ Paid Clients & Delegates</span>
+                      <span className="text-[#625E56] block text-[11px]">Key Benchmark:</span>
+                      <span className="font-bold text-emerald-700 text-sm">120-Frame 60fps Scroll Scrubbing</span>
+                    </div>
+                    <div>
+                      <span className="text-[#625E56] block text-[11px]">Pipeline:</span>
+                      <span className="font-semibold text-[#282828] leading-snug block">
+                        01. Wireframe &amp; Type • 02. 3D/GSAP Motion • 03. Asset Optimization • 04. Production Deploy
+                      </span>
                     </div>
                   </div>
                 </div>
 
-                <div className="pt-2 border-t border-[#E2DED5]">
-                  <span className="font-hand text-xs text-stone-600 block">
-                    Zero automation spam. Every email & call was tailored by hand.
-                  </span>
+                <div className="pt-2 border-t border-[#E2DED5] flex flex-wrap gap-1.5">
+                  {['Three.js', 'GSAP', 'Python', 'GitHub'].map((tool) => (
+                    <span
+                      key={tool}
+                      className="text-[10px] font-mono font-bold px-2 py-0.5 rounded bg-white border border-[#D5D0C5] text-[#121212]"
+                    >
+                      {tool}
+                    </span>
+                  ))}
                 </div>
               </div>
             </div>

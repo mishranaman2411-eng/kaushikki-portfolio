@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-import { 
-  ChevronLeft, 
-  Share2, 
-  Copy, 
+import {
+  ChevronLeft,
+  Share2,
+  Copy,
   CheckCheck,
   Check
 } from 'lucide-react';
@@ -12,39 +12,35 @@ import { DoodleUnderline, DoodleSparkle } from './HandDrawn';
 export default function AppleNotesAbout() {
   const [copiedNote, setCopiedNote] = useState(false);
   const [checkedItems, setCheckedItems] = useState({
-    pitch: true,
-    outreach: true,
-    objections: true,
-    followup: true,
+    frontend: true,
+    backend: true,
+    systems: true,
+    motion: true,
   });
 
   const toggleCheck = (id) => {
     playCheck();
-    setCheckedItems(prev => ({ ...prev, [id]: !prev[id] }));
+    setCheckedItems((prev) => ({ ...prev, [id]: !prev[id] }));
   };
 
   const copyNoteContent = () => {
     playPop();
-    const text = `Koushhiki Roy: Strategic Sales & Digital Marketing
+    const text = `Naman Mishra: Studio & Engineering Memo
 
-Based in Kolkata. Currently pursuing a Bachelor of Business Administration in Digital Business & Entrepreneurship (BBA DBE) at IIM Bangalore (2026–2029).
+Based in Chandigarh. Currently a 3rd-year B.Tech student in Electronics & Communication Engineering at Chandigarh College of Engineering and Technology (CCET, Class of 2028) while building interactive websites and leading tech at ARAEL WEARS.
 
-In the Field:
-- In-person client pitching: Presented property portfolios to 50+ live clients at Team Taurus. Handled high-stakes presentations and answered buyer questions on the spot.
-- Cold outreach & client conversion: Reached out to parents, students, and businesses at Dublieu, converting 200+ clients across cold calling and email sequences.
-- Objection handling: Dissecting hesitation around pricing and timing to resolve concerns with clarity.
-- Consistent follow-through: Structured follow-ups and lead tracking.
+I hate generic, template-heavy web design. Whether I am engineering a 3D scroll sequence, building a custom storefront, or writing a Python CLI tool, I focus on performance, sharp editorial typography, and tactile interactions that feel intentional.
 
-Daily Stack:
-- Canva & Video Editing: Client pitch decks, visual campaign assets, and narrative video edits.
-- Microsoft Excel: Lead tracking, data organization, and outreach conversion analysis.
-- Microsoft PowerPoint & Word: Structured client briefs and presentation decks.
-- Generative AI: Prompt engineering for research and creative ideation.
+Working Stack:
+- 3D & Frontend: Next.js, React Three Fiber, Three.js, GSAP ScrollTrigger, Tailwind CSS
+- E-Commerce & Backend: Shopify Architecture, Razorpay Integrations, Qikink Fulfillment, SQLite
+- Systems & Hardware: Python 3.11, MATLAB (DSP), Cadence Virtuoso & GHDL (CMOS VLSI)
+- Motion & Media: Custom SVG Character Rigs, FFmpeg Automation, AI-Assisted Prototyping
 
 Working Note:
-Good selling isn't convincing someone to buy something they don't need. It's asking the right questions to understand their problem and knowing your product well enough to solve it.
+Good software and good design share the same rule: strip out the bloat, respect the user's hardware, and make every interaction feel immediate.
 
-Contact: koushhikiroy@gmail.com | +91 898 1788 534`;
+Contact: mishranaman2411@gmail.com | +91 90154 99931`;
 
     navigator.clipboard.writeText(text);
     setCopiedNote(true);
@@ -58,7 +54,7 @@ Contact: koushhikiroy@gmail.com | +91 898 1788 534`;
         {/* Section Header */}
         <div className="text-center mb-8 sm:mb-12">
           <h2 className="text-3xl sm:text-4xl font-black text-[#121212] tracking-tight flex items-center justify-center gap-2">
-            <span>The About Me Memo</span>
+            <span>The Studio &amp; Engineering Memo</span>
             <DoodleSparkle className="w-6 h-6 text-[#1A1A1A] hidden sm:inline-block" strokeColor="#1A1A1A" />
           </h2>
 
@@ -67,7 +63,7 @@ Contact: koushhikiroy@gmail.com | +91 898 1788 534`;
           </div>
 
           <p className="font-hand text-lg text-stone-600 mt-2">
-            Background, skills, and how I work.
+            Background, build philosophy, and technical stack.
           </p>
         </div>
 
@@ -91,7 +87,7 @@ Contact: koushhikiroy@gmail.com | +91 898 1788 534`;
                 <span>{copiedNote ? 'Copied' : 'Copy'}</span>
               </button>
 
-              <button 
+              <button
                 onClick={() => { playClick(); copyNoteContent(); }}
                 className="p-1 rounded hover:bg-black/5 transition-colors"
                 title="Share note"
@@ -108,14 +104,14 @@ Contact: koushhikiroy@gmail.com | +91 898 1788 534`;
             {/* Timestamp */}
             <div className="text-center pb-6">
               <span className="text-xs font-mono text-[#8C867A] uppercase tracking-wider">
-                November 24, 2026 at 10:42 AM
+                November 25, 2026 at 6:30 PM
               </span>
             </div>
 
             {/* Note Title */}
             <div className="pb-6">
               <h1 className="text-2xl sm:text-3xl font-black tracking-tight text-[#121212] leading-tight">
-                Koushhiki Roy: Strategic Sales & Digital Marketing
+                Naman Mishra: 3D Web, Product Systems &amp; ECE
               </h1>
             </div>
 
@@ -127,28 +123,36 @@ Contact: koushhikiroy@gmail.com | +91 898 1788 534`;
               <p>
                 Based in{' '}
                 <mark className="bg-[#FEF08A]/90 text-[#121212] px-1 py-0.5 rounded-sm font-semibold">
-                  Kolkata
+                  Chandigarh
                 </mark>
-                . Currently studying in the Bachelor of Business Administration in Digital Business & Entrepreneurship (BBA DBE) program at{' '}
+                . Currently a 3rd-year B.Tech student in Electronics &amp; Communication Engineering at Chandigarh College of Engineering and Technology (
                 <mark className="bg-[#FEF08A]/90 text-[#121212] px-1 py-0.5 rounded-sm font-semibold">
-                  IIM Bangalore (2026–2029)
+                  CCET, Class of 2028
+                </mark>
+                ) while building interactive websites and leading tech at{' '}
+                <mark className="bg-[#FEF08A]/90 text-[#121212] px-1 py-0.5 rounded-sm font-semibold">
+                  ARAEL WEARS
                 </mark>
                 .
               </p>
 
               <p>
-                Most people hate cold calling; I actually enjoy it. Whether I'm on a discovery call or walking a buyer through a property, I don't rely on pushy scripts—I focus on figuring out what the buyer actually cares about and answering their concerns upfront.
+                I hate generic, template-heavy web design. Whether I am engineering a{' '}
+                <mark className="bg-[#FEF08A]/90 text-[#121212] px-1 py-0.5 rounded-sm font-semibold">
+                  3D scroll sequence
+                </mark>
+                , building a custom storefront, or writing a Python CLI tool, I focus on performance, sharp editorial typography, and tactile interactions that feel intentional.
               </p>
             </div>
 
             {/* Thin 1px Horizontal Divider */}
             <div className="border-t border-[#E8E4D9] my-6" />
 
-            {/* Section: In the Field */}
+            {/* Section: Working Stack Checklist */}
             <div className="space-y-4">
               <div className="flex items-baseline justify-between">
                 <h3 className="font-mono text-xs font-bold uppercase tracking-wider text-[#625E56]">
-                  In the Field
+                  Working Stack
                 </h3>
                 <span className="text-[11px] font-mono text-stone-400">
                   Tap circle to check off
@@ -158,40 +162,24 @@ Contact: koushhikiroy@gmail.com | +91 898 1788 534`;
               <div className="space-y-3.5">
                 {[
                   {
-                    id: 'pitch',
-                    title: 'In-person client pitching',
-                    desc: (
-                      <>
-                        Presented high-value property portfolios to{' '}
-                        <mark className="bg-[#FEF08A]/90 text-[#121212] px-1 py-0.5 rounded-sm font-semibold">
-                          50+ live clients
-                        </mark>{' '}
-                        at Team Taurus. Learned how to read body language, break down pricing structures without hesitation, and keep high-stakes conversations grounded.
-                      </>
-                    ),
+                    id: 'frontend',
+                    title: '3D & Frontend',
+                    desc: 'Next.js, React Three Fiber, Three.js, GSAP ScrollTrigger, Tailwind CSS',
                   },
                   {
-                    id: 'outreach',
-                    title: 'Cold outreach & client conversion',
-                    desc: (
-                      <>
-                        Rebuilt outbound scripts at Dublieu, reaching out directly to parents, students, and small businesses to convert over{' '}
-                        <mark className="bg-[#FEF08A]/90 text-[#121212] px-1 py-0.5 rounded-sm font-semibold">
-                          200+ clients
-                        </mark>{' '}
-                        for regional summits and educational events.
-                      </>
-                    ),
+                    id: 'backend',
+                    title: 'E-Commerce & Backend',
+                    desc: 'Shopify Architecture, Razorpay Integrations, Qikink Fulfillment, SQLite',
                   },
                   {
-                    id: 'objections',
-                    title: 'Consultative objection handling',
-                    desc: 'Treating buyer hesitation around pricing, delivery dates, or trust as a diagnostic tool rather than a dead end.',
+                    id: 'systems',
+                    title: 'Systems & Hardware',
+                    desc: 'Python 3.11, MATLAB (DSP), Cadence Virtuoso & GHDL (CMOS VLSI)',
                   },
                   {
-                    id: 'followup',
-                    title: 'Pipeline follow-through',
-                    desc: 'Maintaining structured lead logs and disciplined follow-ups so conversations actually lead to decisions.',
+                    id: 'motion',
+                    title: 'Motion & Media',
+                    desc: 'Custom SVG Character Rigs, FFmpeg Automation, AI-Assisted Prototyping',
                   },
                 ].map((item) => (
                   <div key={item.id} className="flex items-start gap-3 select-none">
@@ -224,57 +212,20 @@ Contact: koushhikiroy@gmail.com | +91 898 1788 534`;
             {/* Thin 1px Horizontal Divider */}
             <div className="border-t border-[#E8E4D9] my-6" />
 
-            {/* Section: Working Stack */}
-            <div className="space-y-3">
-              <h3 className="font-mono text-xs font-bold uppercase tracking-wider text-[#625E56]">
-                Working Stack
-              </h3>
-
-              <ul className="space-y-2 text-sm leading-relaxed text-[#282828] list-none pl-0">
-                <li className="flex items-start gap-2">
-                  <span className="text-[#8C867A] font-mono">•</span>
-                  <span>
-                    <strong className="text-[#121212]">Canva & Video Editing:</strong> Designing high-conversion sales decks, marketing collateral, and narrative short-form video cuts for campaigns.
-                  </span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <span className="text-[#8C867A] font-mono">•</span>
-                  <span>
-                    <strong className="text-[#121212]">Microsoft Excel:</strong> Structuring lead databases, tracking conversion ratios, and managing clean pipeline records.
-                  </span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <span className="text-[#8C867A] font-mono">•</span>
-                  <span>
-                    <strong className="text-[#121212]">Microsoft PowerPoint & Word:</strong> Crafting client pitch presentations, proposals, and executive briefing notes.
-                  </span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <span className="text-[#8C867A] font-mono">•</span>
-                  <span>
-                    <strong className="text-[#121212]">Generative AI:</strong> Prompting workflows for market research, message variation testing, and creative brainstorming.
-                  </span>
-                </li>
-              </ul>
-            </div>
-
-            {/* Thin 1px Horizontal Divider */}
-            <div className="border-t border-[#E8E4D9] my-6" />
-
             {/* Section: Working Note */}
             <div className="space-y-2 text-sm leading-relaxed text-[#282828]">
               <h3 className="font-mono text-xs font-bold uppercase tracking-wider text-[#625E56]">
                 Working Note
               </h3>
               <p className="italic text-stone-700">
-                "Good selling isn't convincing someone to buy something they don't need. It's asking the right questions to understand their problem and knowing your product well enough to solve it."
+                "Good software and good design share the same rule: strip out the bloat, respect the user's hardware, and make every interaction feel immediate."
               </p>
             </div>
 
             {/* Note Bottom Metadata */}
             <div className="border-t border-[#E8E4D9] mt-8 pt-4 flex items-center justify-between text-[11px] font-mono text-[#8C867A]">
               <span>Last edited today</span>
-              <span>Kolkata, IN</span>
+              <span>Chandigarh, IN</span>
             </div>
 
           </div>
