@@ -12,10 +12,10 @@ import { DoodleUnderline, DoodleSparkle } from './HandDrawn';
 export default function AppleNotesAbout() {
   const [copiedNote, setCopiedNote] = useState(false);
   const [checkedItems, setCheckedItems] = useState({
+    design: true,
     frontend: true,
-    backend: true,
-    systems: true,
     motion: true,
+    stores: true,
   });
 
   const toggleCheck = (id) => {
@@ -25,20 +25,20 @@ export default function AppleNotesAbout() {
 
   const copyNoteContent = () => {
     playPop();
-    const text = `Naman Mishra: Studio & Engineering Memo
+    const text = `Naman Mishra: Studio Memo
 
-Based in Chandigarh. Currently a 3rd-year B.Tech student in Electronics & Communication Engineering at Chandigarh College of Engineering and Technology (CCET, Class of 2028) while building interactive websites and leading tech at ARAEL WEARS.
+Based in Chandigarh. I am a creative web designer, founder of Weerolliinn, CTO at ARAEL WEARS, and a 3rd-year B.Tech ECE student at Chandigarh College of Engineering and Technology (CCET, Class of 2028).
 
-I hate generic, template-heavy web design. Whether I am engineering a 3D scroll sequence, building a custom storefront, or writing a Python CLI tool, I focus on performance, sharp editorial typography, and tactile interactions that feel intentional.
+I hate generic, template-heavy design. When someone visits your website, it only takes a few seconds for them to decide if your brand feels real. I focus on good design, smooth interactions, and fast loading so visitors trust your business right away.
 
-Working Stack:
-- 3D & Frontend: Next.js, React Three Fiber, Three.js, GSAP ScrollTrigger, Tailwind CSS
-- E-Commerce & Backend: Shopify Architecture, Razorpay Integrations, Qikink Fulfillment, SQLite
-- Systems & Hardware: Python 3.11, MATLAB (DSP), Cadence Virtuoso & GHDL (CMOS VLSI)
-- Motion & Media: Custom SVG Character Rigs, FFmpeg Automation, AI-Assisted Prototyping
+Tools I Use:
+- Design & Layout: Custom fonts, clean spacing, and mobile-friendly pages
+- Web Fundamentals: HTML, CSS, JavaScript, TypeScript, React, Next.js
+- Smooth Motion: GSAP scroll animations, interactive buttons, and Three.js (3D) when a project calls for it
+- Online Stores: Product pop-ups, lookbooks, and clear checkout flows
 
 Working Note:
-Good software and good design share the same rule: strip out the bloat, respect the user's hardware, and make every interaction feel immediate.
+Good design is simple: load fast, make every interaction feel smooth, and help visitors trust the brand.
 
 Contact: mishranaman2411@gmail.com | +91 90154 99931`;
 
@@ -54,7 +54,7 @@ Contact: mishranaman2411@gmail.com | +91 90154 99931`;
         {/* Section Header */}
         <div className="text-center mb-8 sm:mb-12">
           <h2 className="text-3xl sm:text-4xl font-black text-[#121212] tracking-tight flex items-center justify-center gap-2">
-            <span>The Studio &amp; Engineering Memo</span>
+            <span>The Studio Memo</span>
             <DoodleSparkle className="w-6 h-6 text-[#1A1A1A] hidden sm:inline-block" strokeColor="#1A1A1A" />
           </h2>
 
@@ -63,7 +63,7 @@ Contact: mishranaman2411@gmail.com | +91 90154 99931`;
           </div>
 
           <p className="font-hand text-lg text-stone-600 mt-2">
-            Background, build philosophy, and technical stack.
+            Background, how I work, and the tools I use.
           </p>
         </div>
 
@@ -104,14 +104,14 @@ Contact: mishranaman2411@gmail.com | +91 90154 99931`;
             {/* Timestamp */}
             <div className="text-center pb-6">
               <span className="text-xs font-mono text-[#8C867A] uppercase tracking-wider">
-                November 25, 2026 at 6:30 PM
+                November 28, 2026 at 12:30 PM
               </span>
             </div>
 
             {/* Note Title */}
             <div className="pb-6">
               <h1 className="text-2xl sm:text-3xl font-black tracking-tight text-[#121212] leading-tight">
-                Naman Mishra: 3D Web, Product Systems &amp; ECE
+                Naman Mishra: Creative Web Designer
               </h1>
             </div>
 
@@ -125,34 +125,34 @@ Contact: mishranaman2411@gmail.com | +91 90154 99931`;
                 <mark className="bg-[#FEF08A]/90 text-[#121212] px-1 py-0.5 rounded-sm font-semibold">
                   Chandigarh
                 </mark>
-                . Currently a 3rd-year B.Tech student in Electronics &amp; Communication Engineering at Chandigarh College of Engineering and Technology (
+                . I am a creative web designer, founder of{' '}
                 <mark className="bg-[#FEF08A]/90 text-[#121212] px-1 py-0.5 rounded-sm font-semibold">
-                  CCET, Class of 2028
+                  Weerolliinn
                 </mark>
-                ) while building interactive websites and leading tech at{' '}
+                , CTO at{' '}
                 <mark className="bg-[#FEF08A]/90 text-[#121212] px-1 py-0.5 rounded-sm font-semibold">
                   ARAEL WEARS
                 </mark>
-                .
+                , and a 3rd-year B.Tech ECE student at CCET Chandigarh (Class of 2028).
               </p>
 
               <p>
-                I hate generic, template-heavy web design. Whether I am engineering a{' '}
+                I hate generic, template-heavy design. When a customer lands on your site, it takes just a few seconds to decide if your brand feels real. I focus on{' '}
                 <mark className="bg-[#FEF08A]/90 text-[#121212] px-1 py-0.5 rounded-sm font-semibold">
-                  3D scroll sequence
-                </mark>
-                , building a custom storefront, or writing a Python CLI tool, I focus on performance, sharp editorial typography, and tactile interactions that feel intentional.
+                  good design, smooth interactions, and fast loading
+                </mark>{' '}
+                so visitors trust what you offer from the first click.
               </p>
             </div>
 
             {/* Thin 1px Horizontal Divider */}
             <div className="border-t border-[#E8E4D9] my-6" />
 
-            {/* Section: Working Stack Checklist */}
+            {/* Section: Tools I Use Checklist */}
             <div className="space-y-4">
               <div className="flex items-baseline justify-between">
                 <h3 className="font-mono text-xs font-bold uppercase tracking-wider text-[#625E56]">
-                  Working Stack
+                  Tools &amp; Skills
                 </h3>
                 <span className="text-[11px] font-mono text-stone-400">
                   Tap circle to check off
@@ -162,24 +162,24 @@ Contact: mishranaman2411@gmail.com | +91 90154 99931`;
               <div className="space-y-3.5">
                 {[
                   {
+                    id: 'design',
+                    title: 'Design & Layout',
+                    desc: 'Custom fonts, clean dark or light styles, and phone-friendly pages',
+                  },
+                  {
                     id: 'frontend',
-                    title: '3D & Frontend',
-                    desc: 'Next.js, React Three Fiber, Three.js, GSAP ScrollTrigger, Tailwind CSS',
-                  },
-                  {
-                    id: 'backend',
-                    title: 'E-Commerce & Backend',
-                    desc: 'Shopify Architecture, Razorpay Integrations, Qikink Fulfillment, SQLite',
-                  },
-                  {
-                    id: 'systems',
-                    title: 'Systems & Hardware',
-                    desc: 'Python 3.11, MATLAB (DSP), Cadence Virtuoso & GHDL (CMOS VLSI)',
+                    title: 'Web Fundamentals',
+                    desc: 'HTML, CSS, JavaScript, TypeScript, React, Next.js, Tailwind CSS',
                   },
                   {
                     id: 'motion',
-                    title: 'Motion & Media',
-                    desc: 'Custom SVG Character Rigs, FFmpeg Automation, AI-Assisted Prototyping',
+                    title: 'Motion & Interactive',
+                    desc: 'GSAP scroll animations, interactive cards, and Three.js (3D) when a site needs it',
+                  },
+                  {
+                    id: 'stores',
+                    title: 'Online Stores',
+                    desc: 'Product detail pop-ups, lookbooks, and simple order screens',
                   },
                 ].map((item) => (
                   <div key={item.id} className="flex items-start gap-3 select-none">
@@ -218,7 +218,7 @@ Contact: mishranaman2411@gmail.com | +91 90154 99931`;
                 Working Note
               </h3>
               <p className="italic text-stone-700">
-                "Good software and good design share the same rule: strip out the bloat, respect the user's hardware, and make every interaction feel immediate."
+                "Good design is simple: make the page load fast, make every interaction feel smooth, and help visitors trust the brand right away."
               </p>
             </div>
 

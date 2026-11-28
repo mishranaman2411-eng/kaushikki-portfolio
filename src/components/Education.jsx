@@ -4,9 +4,7 @@ import {
   Award,
   BookOpen,
   GraduationCap,
-  Cpu,
   Code2,
-  Compass,
   ArrowDown
 } from 'lucide-react';
 import { DoodleUnderline, DoodleSparkle } from './HandDrawn';
@@ -18,7 +16,7 @@ export default function Education() {
   const dockRef = useRef(null);
   const nodeRefs = useRef([]);
 
-  // Chronological Milestone Order (Top to Bottom — 6 Stops)
+  // Chronological Milestone Order (Top to Bottom — 4 Stops)
   const stops = [
     {
       number: "01",
@@ -28,7 +26,7 @@ export default function Education() {
       icon: Award,
       tag: "2022 • Panchkula",
       degree: "Secondary School (Class X)",
-      desc: "Foundational academics and early interest in computing.",
+      desc: "Completed Class X and started building an interest in computers and design.",
     },
     {
       number: "02",
@@ -38,7 +36,7 @@ export default function Education() {
       icon: BookOpen,
       tag: "2024 • Chandigarh",
       degree: "Senior Secondary (Class XII)",
-      desc: "Science and Mathematics foundation prior to engineering.",
+      desc: "Finished Class XII in Chandigarh before joining engineering college.",
     },
     {
       number: "03",
@@ -46,39 +44,19 @@ export default function Education() {
       titlePart2: "CHANDIGARH",
       side: "right",
       icon: GraduationCap,
-      tag: "2024 – 2028 • Sector 26, Chandigarh",
-      degree: "B.Tech in Electronics & Communication Engineering (ECE, 3rd Year)",
-      desc: "Digital Signal Processing, CMOS VLSI Design, Computer Networks & Automata Theory.",
+      tag: "2024 – 2028 • Chandigarh",
+      degree: "B.Tech in ECE (3rd Year)",
+      desc: "Studying Electronics & Communication Engineering at CCET while designing and building websites.",
     },
     {
       number: "04",
-      titlePart1: "VLSI &",
-      titlePart2: "HARDWARE LABS",
+      titlePart1: "SELF-MADE",
+      titlePart2: "WEB DESIGNER",
       side: "left",
-      icon: Cpu,
-      tag: "Core Engineering",
-      degree: "RTL Logic Synthesis & Circuit Simulation",
-      desc: "Circuit simulation, RTL logic synthesis, and signal processing using Cadence Virtuoso, GHDL, and MATLAB.",
-    },
-    {
-      number: "05",
-      titlePart1: "3D WEB &",
-      titlePart2: "ARAEL CTO",
-      side: "right",
       icon: Code2,
-      tag: "Web & Product Systems",
-      degree: "Full-Stack Storefronts & Interactive 3D",
-      desc: "Architecting full-stack e-commerce systems and building scroll-driven Three.js/GSAP interfaces.",
-    },
-    {
-      number: "06",
-      titlePart1: "SEMICONDUCTOR",
-      titlePart2: "PD & STA",
-      side: "left",
-      icon: Compass,
-      tag: "2028 Career Track",
-      degree: "Physical Design & Timing Analysis Track",
-      desc: "Preparing for core semiconductor Physical Design (PD) and Static Timing Analysis (STA) engineering roles.",
+      tag: "Skills & Craft",
+      degree: "Creative Web Design & Frontend Code",
+      desc: "Learned HTML, CSS, JavaScript, TypeScript, React, Next.js, GSAP, and Three.js through hands-on projects.",
     },
   ];
 
@@ -173,7 +151,7 @@ export default function Education() {
         // Activate nodes dynamically as the orange ribbon reaches each position
         nodeRefs.current.forEach((node, idx) => {
           if (!node) return;
-          const activationThreshold = (idx + 0.1) / 6.3;
+          const activationThreshold = (idx + 0.1) / (stops.length + 0.3);
           if (progress >= activationThreshold) {
             node.classList.add('node-active');
           } else {
@@ -195,7 +173,7 @@ export default function Education() {
     return () => {
       st.kill();
     };
-  }, []);
+  }, [stops.length]);
 
   return (
     <section id="credentials" className="pt-16 sm:pt-24 pb-0 px-4 sm:px-6 lg:px-8 relative z-20">
@@ -204,7 +182,7 @@ export default function Education() {
         {/* Section Header */}
         <div className="text-center mb-16 sm:mb-20">
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-[#121212] tracking-tight flex items-center justify-center gap-2">
-            <span>Education &amp; Engineering Path</span>
+            <span>Education &amp; Journey</span>
             <DoodleSparkle className="w-7 h-7 text-[#1A1A1A] hidden sm:inline-block" strokeColor="#1A1A1A" />
           </h2>
 
@@ -213,7 +191,7 @@ export default function Education() {
           </div>
 
           <p className="font-hand text-lg sm:text-xl text-stone-600 mt-2 max-w-xl mx-auto">
-            B.Tech ECE at CCET Chandigarh alongside VLSI lab work, 3D web engineering, and startup tech.
+            School, college, and how I learned creative web design.
           </p>
         </div>
 
@@ -282,7 +260,7 @@ export default function Education() {
             </svg>
           </div>
 
-          {/* 6 Milestone Nodes Along the Pathway */}
+          {/* 4 Milestone Nodes Along the Pathway */}
           <div className="space-y-16 sm:space-y-24 relative z-10">
             {stops.map((stop, idx) => {
               const Icon = stop.icon;

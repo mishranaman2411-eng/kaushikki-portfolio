@@ -143,10 +143,10 @@ export default function App() {
           {/* Apple Notes "About" Widget */}
           <AppleNotesAbout />
 
-          {/* Builds & Leadership Cards (ARAEL WEARS & Independent Engineering Builds) */}
+          {/* My Works Cards (Weerolliinn, ARAEL WEARS & Portfolio) */}
           <Experience />
 
-          {/* Winding SVG Pathway (Education & Engineering Path) */}
+          {/* Winding SVG Pathway (Education & Journey) */}
           <Education />
 
           {/* iOS Mail "Contact" Composer */}

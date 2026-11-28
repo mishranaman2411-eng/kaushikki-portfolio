@@ -20,59 +20,59 @@ import {
 
 export default function ContactMailComposer() {
   const [copiedItem, setCopiedItem] = useState(null);
-  const [selectedTopic, setSelectedTopic] = useState('3d-web');
+  const [selectedTopic, setSelectedTopic] = useState('creative-website');
   const [senderEmail, setSenderEmail] = useState('');
   const [customMessage, setCustomMessage] = useState('');
   const [messageSentFeedback, setMessageSentFeedback] = useState(false);
 
   const topics = [
     {
-      id: '3d-web',
-      label: '🌐 3D / Interactive Website',
-      subject: 'Project Inquiry: Interactive 3D Web Build x Naman Mishra',
+      id: 'creative-website',
+      label: 'Creative Website',
+      subject: 'Website Project: Naman Mishra',
       defaultBody: `Hi Naman,
 
-I came across your portfolio and loved your work on scroll-driven 3D interfaces and 120-frame interactive showcases.
+I saw your portfolio and liked how clean and interactive your work feels.
 
-We are looking to build an interactive website with strong editorial typography and smooth GSAP/Three.js motion. Let's schedule a quick call to discuss scope and timelines.
-
-Best regards,`
-    },
-    {
-      id: 'ecommerce',
-      label: '🛍️ E-Commerce Storefront',
-      subject: 'Inquiry: Custom E-Commerce Storefront & Checkout Architecture',
-      defaultBody: `Hi Naman,
-
-I saw your CTO architecture work for ARAEL WEARS and would love to discuss building a custom storefront for our brand with automated fulfillment and Razorpay checkout integration.
-
-Let me know when you're free to chat!
+We want to build a creative, interactive website that helps our brand look more trustworthy to customers. Let's talk soon about what we need and when you are free.
 
 Best,`
     },
     {
-      id: 'ui-ux',
-      label: '🎨 Editorial UI/UX Redesign',
-      subject: 'Collaboration: Tactile Editorial UI/UX Redesign',
+      id: 'online-store',
+      label: 'Online Store',
+      subject: 'Website Project: Naman Mishra',
       defaultBody: `Hi Naman,
 
-Your tactile approach to UI engineering caught our eye. We want to overhaul our current web presence away from generic templates into something custom, fast, and memorable.
+I saw the online store you built for ARAEL WEARS and liked how smoothly it works on mobile.
 
-Looking forward to connecting!
+We want to build a creative, interactive online store that looks great and makes customers trust our brand right away. Let me know when you can chat.
 
-Cheers,`
+Best,`
+    },
+    {
+      id: 'website-redesign',
+      label: 'Website Redesign',
+      subject: 'Website Project: Naman Mishra',
+      defaultBody: `Hi Naman,
+
+Our current site feels too plain and template-like. We want to redesign it into a creative, interactive website that builds trust with our visitors.
+
+I'd love to hear how you would approach this and when you're available.
+
+Thanks,`
     },
     {
       id: 'internship',
-      label: '💻 Internship / Tech Collaboration',
-      subject: 'Opportunity: Tech Internship / Engineering Collaboration',
+      label: 'Internship / Collaboration',
+      subject: 'Website Project: Naman Mishra',
       defaultBody: `Hi Naman,
 
-We checked out your builds and B.Tech ECE background at CCET Chandigarh. We have an engineering role/collaboration in frontend, Python tooling, or core systems that aligns well with your skill set.
+I checked out your websites and work at Weerolliinn and ARAEL WEARS. We're looking for someone who builds creative, interactive websites that earn customers' trust, and we'd love to discuss an internship or collaboration.
 
-Let us know when we can connect for an introductory chat!
+Let us know when you're free for a quick chat!
 
-Warm regards,`
+Best,`
     }
   ];
 
@@ -125,7 +125,7 @@ Warm regards,`
           </div>
 
           <p className="font-hand text-lg sm:text-xl text-stone-600 mt-2 max-w-xl mx-auto">
-            Pick a topic pill below to generate a tailored draft, or use the one-click copy buttons.
+            Pick a topic below to write a quick draft, or copy my details with one click.
           </p>
         </div>
 
@@ -226,7 +226,7 @@ Warm regards,`
         {/* Hand-drawn Curved Pointer Arrow Pointing directly toward the iOS Mail Card */}
         <div className="flex items-center justify-end gap-2 pr-6 mb-2 text-[#1A1A1A]">
           <span className="font-hand text-base font-bold rotate-[-3deg] text-[#1A1A1A]">
-            draft your message right here ✍️
+            write your message here ✍️
           </span>
           <DoodleArrow className="w-12 h-10 text-[#1A1A1A]" strokeColor="#1A1A1A" />
         </div>
@@ -278,7 +278,7 @@ Warm regards,`
               <span className="font-mono text-xs text-[#8C867A] w-14">From:</span>
               <input
                 type="email"
-                placeholder="your.email@organization.com"
+                placeholder="your.email@company.com"
                 value={senderEmail}
                 onChange={(e) => setSenderEmail(e.target.value)}
                 className="w-full text-xs sm:text-sm text-[#121212] placeholder-stone-400 bg-transparent focus:outline-none font-medium"
@@ -300,7 +300,7 @@ Warm regards,`
             <div className="pt-2 pb-1">
               <div className="text-[11px] font-mono text-[#625E56] font-bold uppercase tracking-wider mb-2 flex items-center gap-1">
                 <Sparkles size={12} className="text-amber-600" />
-                <span>Select a Conversation Topic (Generates auto-draft)</span>
+                <span>Pick a Topic to Fill the Draft</span>
               </div>
 
               <div className="flex flex-wrap gap-2">
@@ -324,7 +324,7 @@ Warm regards,`
             {/* Body Textarea */}
             <div className="pt-2">
               <label className="text-[10px] font-mono text-[#8C867A] uppercase block mb-1">
-                Editable Message Draft
+                Message Draft
               </label>
               <textarea
                 rows={7}
@@ -343,11 +343,11 @@ Warm regards,`
                   className="tactile-btn flex items-center gap-1.5 px-3 py-2 rounded-xl bg-[#F4F1EA] border border-[#121212] text-xs font-bold text-[#121212] hover:bg-[#EFECE6]"
                 >
                   {copiedItem === 'draft' ? <CheckCheck size={14} className="text-emerald-700" /> : <Copy size={14} />}
-                  <span>{copiedItem === 'draft' ? 'Draft Copied! ✓' : 'Copy Text Draft'}</span>
+                  <span>{copiedItem === 'draft' ? 'Draft Copied! ✓' : 'Copy Draft'}</span>
                 </button>
 
                 <span className="font-hand text-xs text-stone-500 hidden sm:inline">
-                  (works with any email client)
+                  (works with any email app)
                 </span>
               </div>
 
@@ -356,13 +356,13 @@ Warm regards,`
                 className="w-full sm:w-auto tactile-btn flex items-center justify-center gap-2 px-5 py-2.5 rounded-xl bg-blue-600 text-white text-xs sm:text-sm font-bold hover:bg-blue-700"
               >
                 <Send size={14} />
-                <span>Open in Mail App &amp; Send</span>
+                <span>Open in Email App &amp; Send</span>
               </button>
             </div>
 
             {messageSentFeedback && (
               <div className="p-3 bg-emerald-50 border border-emerald-300 rounded-xl text-center text-xs font-mono text-emerald-800 animate-in fade-in">
-                ✓ Launching your device’s default mail app to send to mishranaman2411@gmail.com!
+                ✓ Opening your email app to send to mishranaman2411@gmail.com!
               </div>
             )}
 

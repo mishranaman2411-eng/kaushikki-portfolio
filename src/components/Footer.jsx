@@ -29,7 +29,7 @@ export default function Footer() {
               </span>
             </div>
             <p className="text-xs text-[#625E56] font-mono">
-              3D Web Engineering, Product Systems &amp; ECE • Chandigarh, India
+              Creative Web Designer • Chandigarh, India
             </p>
           </div>
 
@@ -94,7 +94,7 @@ export default function Footer() {
         {/* Hand-drawn editorial signoff */}
         <div className="mt-6 text-center">
           <p className="font-hand text-base text-stone-500">
-            Open to Freelance Web Projects &amp; Semiconductor / Software Internships.
+            Open for freelance website projects &amp; 7th-sem internships.
           </p>
         </div>
 

@@ -12,7 +12,7 @@ export default function PrintResume() {
               Naman Mishra
             </h1>
             <span className="text-xs font-semibold text-gray-700 uppercase tracking-widest">
-              3D Web Engineering &amp; ECE
+              Creative Web Designer
             </span>
           </div>
 
@@ -27,7 +27,7 @@ export default function PrintResume() {
           </p>
 
           <p className="text-xs text-gray-800 mt-2.5 leading-relaxed text-justify">
-            3D web developer, UI/UX engineer, and 3rd-year B.Tech Electronics &amp; Communication Engineering student at <strong>CCET Chandigarh (2024–2028)</strong>. Leading end-to-end storefront and technical architecture as CTO at <strong>ARAEL WEARS</strong> while building scroll-driven WebGL experiences and Python developer CLI tools.
+            Creative web designer, founder of <strong>Weerolliinn</strong>, CTO at <strong>ARAEL WEARS</strong>, and 3rd-year B.Tech ECE student at <strong>CCET Chandigarh (2024–2028)</strong>. I build interactive, good-looking websites that load fast and help brands earn customers' trust.
           </p>
         </header>
 
@@ -45,11 +45,8 @@ export default function PrintResume() {
                 </div>
                 <div className="flex justify-between text-gray-800 italic">
                   <span>B.Tech in Electronics &amp; Communication Engineering (ECE, 3rd Year)</span>
-                  <span>Sector 26, Chandigarh</span>
+                  <span>Chandigarh</span>
                 </div>
-                <p className="text-gray-700 text-[11px] mt-0.5">
-                  Core coursework: Digital Signal Processing, CMOS VLSI Design, Computer Networks, Automata Theory.
-                </p>
               </div>
 
               <div>
@@ -58,7 +55,7 @@ export default function PrintResume() {
                   <span className="font-semibold text-gray-700">2024</span>
                 </div>
                 <div className="flex justify-between text-gray-800 italic">
-                  <span>Senior Secondary (Class XII) — Science &amp; Mathematics</span>
+                  <span>Senior Secondary (Class XII)</span>
                   <span>Chandigarh</span>
                 </div>
               </div>
@@ -76,75 +73,75 @@ export default function PrintResume() {
             </div>
           </section>
 
-          {/* Experience */}
+          {/* My Works */}
           <section>
             <h2 className="text-sm font-bold uppercase tracking-wider text-black border-b border-gray-400 pb-0.5 mb-2">
-              Engineering &amp; Leadership Experience
+              My Works
             </h2>
             <div className="space-y-3 text-xs">
               <div>
                 <div className="flex justify-between font-bold">
-                  <span>ARAEL WEARS</span>
-                  <span className="font-semibold text-gray-700">2026 – Present</span>
+                  <span>Weerolliinn</span>
+                  <span className="font-semibold text-gray-700">Founder &amp; Owner</span>
                 </div>
                 <div className="flex justify-between text-gray-800 italic mb-1">
-                  <span>Chief Technology Officer (CTO)</span>
+                  <span>Web Studio</span>
                   <span>Chandigarh, India</span>
                 </div>
                 <ul className="list-disc pl-4 space-y-1 text-gray-800 text-[11.5px]">
                   <li>
-                    Engineered a custom high-conversion web storefront with interactive product inspection modals and mobile-first lookbook layouts for heavyweight 300 GSM hoodies.
+                    Built creative, interactive websites with clean dark designs, custom fonts, and smooth scroll animations.
                   </li>
                   <li>
-                    Architected automated print-on-demand order routing via Qikink alongside seamless Razorpay checkout integration.
-                  </li>
-                  <li>
-                    Produced custom 16:9 and 9:16 lookbook hero animations styled after classic PS2/PS4-era cutscenes.
+                    Created an interactive product page with a simple 2-step order and receipt screen.
                   </li>
                 </ul>
               </div>
 
               <div>
                 <div className="flex justify-between font-bold">
-                  <span>Weerolliinn</span>
-                  <span className="font-semibold text-gray-700">2025 – Present</span>
+                  <span>ARAEL WEARS</span>
+                  <span className="font-semibold text-gray-700">Chief Technical Officer</span>
                 </div>
                 <div className="flex justify-between text-gray-800 italic mb-1">
-                  <span>Founder &amp; Owner</span>
+                  <span>Online Store</span>
                   <span>Chandigarh, India</span>
                 </div>
                 <ul className="list-disc pl-4 space-y-1 text-gray-800 text-[11.5px]">
                   <li>
-                    Built a 120-frame scroll-driven 360° interactive 3D showcase paired with a two-step interactive order and receipt checkout UI.
+                    Built the streetwear brand's online store with product pop-ups to look closely at items.
                   </li>
                   <li>
-                    Designed and engineered high-contrast minimalist dark editorial web concepts with custom typography and GSAP scroll choreography.
+                    Designed a phone-friendly lookbook and retro PlayStation-style intro animations.
                   </li>
+                </ul>
+              </div>
+
+              <div>
+                <div className="flex justify-between font-bold">
+                  <span>My Portfolio Website</span>
+                  <span className="font-semibold text-gray-700">Design &amp; Code</span>
+                </div>
+                <ul className="list-disc pl-4 space-y-1 text-gray-800 text-[11.5px]">
                   <li>
-                    Engineered a local Python 3.11 command-line financial analysis tool for NSE/BSE equity research using pandas, yfinance, SQLite, and pydantic.
+                    Built an editorial paper-styled portfolio with a flip card, a winding scroll path, and a contact section that writes an email draft.
                   </li>
                 </ul>
               </div>
             </div>
           </section>
 
-          {/* Technical Stack */}
+          {/* Skills */}
           <section>
             <h2 className="text-sm font-bold uppercase tracking-wider text-black border-b border-gray-400 pb-0.5 mb-2">
-              Technical Stack &amp; Tooling
+              Self-Made Web Designer Skills
             </h2>
             <div className="text-xs space-y-1 text-gray-800">
               <p>
-                <strong className="text-black">3D &amp; Frontend:</strong> Next.js, React Three Fiber, Three.js, GSAP ScrollTrigger, Tailwind CSS
+                <strong className="text-black">Languages &amp; Frameworks:</strong> HTML, CSS, JavaScript, TypeScript, React, Next.js, Tailwind CSS
               </p>
               <p>
-                <strong className="text-black">E-Commerce &amp; Backend:</strong> Shopify Architecture, Razorpay Integrations, Qikink Fulfillment, SQLite
-              </p>
-              <p>
-                <strong className="text-black">Systems &amp; Hardware:</strong> Python 3.11, MATLAB (DSP), Cadence Virtuoso &amp; GHDL (CMOS VLSI), Physical Design &amp; STA Track
-              </p>
-              <p>
-                <strong className="text-black">Motion &amp; Media:</strong> Custom SVG Character Rigs, FFmpeg Automation, AI-Assisted Prototyping
+                <strong className="text-black">Motion &amp; Interaction:</strong> GSAP, Lenis Smooth Scroll, Three.js (3D)
               </p>
             </div>
           </section>

@@ -187,7 +187,7 @@ export function GithubIcon({ className = "w-4 h-4", size = 16 }) {
 }
 
 // Tactile Rubber Stamp badge with optional hand-drawn circle overlay
-export function TactileStamp({ label, count, sublabel = "verified build", color = "orange" }) {
+export function TactileStamp({ label, count, sublabel = "custom site", color = "orange" }) {
   const colorMap = {
     orange: "border-orange-600 text-orange-700 bg-orange-50/70",
     green: "border-emerald-700 text-emerald-800 bg-emerald-50/70",

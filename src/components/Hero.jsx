@@ -1,19 +1,19 @@
 import React, { useState } from 'react';
-import { 
-  ArrowDownRight, 
-  MapPin, 
-  Send, 
-  Box, 
-  Terminal, 
-  Code2, 
+import {
+  ArrowDownRight,
+  MapPin,
+  Send,
+  Sparkles,
+  Terminal,
+  Code2,
   CheckCircle2,
   ArrowUpRight
 } from 'lucide-react';
-import { 
-  DoodleUnderline, 
-  DoodleArrow, 
-  DoodleCircle, 
-  DoodleSparkle, 
+import {
+  DoodleUnderline,
+  DoodleArrow,
+  DoodleCircle,
+  DoodleSparkle,
   PaperClip,
   GithubIcon
 } from './HandDrawn';
@@ -52,7 +52,7 @@ export default function Hero() {
             <div className="flex flex-wrap items-center gap-2.5">
               <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white border border-[#121212] shadow-tactile text-xs font-mono font-bold text-[#121212]">
                 <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
-                B.Tech ECE ’28 • CCET
+                Creative Web Designer
               </span>
               <span className="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-[#FEF08A] border border-[#121212] text-xs font-hand font-bold text-[#121212] rotate-[1deg]">
                 <MapPin size={12} className="stroke-[2.5]" />
@@ -63,7 +63,7 @@ export default function Hero() {
             {/* Expressive Editorial Headline with Ink-Black Underline */}
             <div className="space-y-2">
               <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl font-black tracking-tight leading-[1.12] text-[#121212]">
-                3D web engineering, product systems, and tactile UI.
+                Creative websites that make your brand look trusted.
               </h1>
               <div className="w-56 sm:w-72 pt-1">
                 <DoodleUnderline className="w-full h-4 text-[#1A1A1A]" strokeColor="#1A1A1A" />
@@ -78,25 +78,25 @@ export default function Hero() {
                 <span className="absolute -bottom-2 left-0 w-full pointer-events-none">
                   <DoodleUnderline className="w-full h-3 text-[#1A1A1A]" strokeColor="#1A1A1A" />
                 </span>
-              </span>{' '}
-              — Founder &amp; Owner of Weerolliinn, CTO at ARAEL WEARS, and a 3rd-year B.Tech ECE student at CCET Chandigarh building scroll-driven 3D web experiences and full-stack storefronts.
+              </span>
+              , founder of Weerolliinn, CTO at ARAEL WEARS, and a 3rd-year B.Tech ECE student at CCET Chandigarh. I build creative, interactive websites that look great and earn customers' trust.
             </p>
 
             {/* Tactile Key Metrics Ribbon with Looped Circles */}
             <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 pt-1">
               <div className="tactile-card p-3 rounded-xl bg-white border-[1.5px] border-[#121212]">
                 <div className="flex items-center justify-between text-[#625E56] text-[11px] font-mono">
-                  <span>WEBGL & 3D</span>
-                  <Box size={13} className="text-orange-500" />
+                  <span>WEB DESIGN</span>
+                  <Sparkles size={13} className="text-orange-500" />
                 </div>
                 <div className="mt-1 relative inline-block">
-                  <span className="font-black text-xl sm:text-2xl tracking-tight text-[#121212] relative z-10">120-Frame</span>
+                  <span className="font-black text-xl sm:text-2xl tracking-tight text-[#121212] relative z-10">Interactive</span>
                   <div className="absolute -inset-1.5 pointer-events-none">
                     <DoodleCircle className="w-full h-full text-[#1A1A1A]" strokeColor="#1A1A1A" />
                   </div>
                 </div>
                 <p className="text-[11px] font-medium text-[#625E56] leading-tight mt-1">
-                  Scroll-scrubbed interactive 3D architecture
+                  Creative sites built to earn customer trust
                 </p>
               </div>
 
@@ -112,18 +112,18 @@ export default function Hero() {
                   </div>
                 </div>
                 <p className="text-[11px] font-medium text-[#625E56] leading-tight mt-1">
-                  Tech & storefront architecture at ARAEL WEARS
+                  Online store &amp; tech at ARAEL WEARS
                 </p>
               </div>
 
               <div className="tactile-card p-3 rounded-xl bg-amber-50/60 border-[1.5px] border-[#121212] col-span-2 sm:col-span-1">
                 <div className="flex items-center justify-between text-[#625E56] text-[11px] font-mono">
-                  <span>CORE STACK</span>
+                  <span>TOOLS</span>
                   <Code2 size={13} className="text-amber-600" />
                 </div>
-                <div className="mt-1 font-black text-xl sm:text-2xl tracking-tight text-[#121212]">Full-Stack</div>
+                <div className="mt-1 font-black text-xl sm:text-2xl tracking-tight text-[#121212]">Modern Web</div>
                 <p className="text-[11px] font-medium text-[#625E56] leading-tight mt-1">
-                  Next.js, Three.js, GSAP & Python CLI
+                  Next.js, GSAP &amp; more
                 </p>
               </div>
             </div>
@@ -135,14 +135,14 @@ export default function Hero() {
                 className="tactile-btn flex items-center gap-2 px-5 py-3 rounded-xl bg-[#121212] text-[#F8F7F4] text-sm font-bold hover:bg-neutral-800 transition-all shadow-tactile active:scale-[0.98]"
               >
                 <Send size={15} className="stroke-[2.5]" />
-                <span>Say Hello via iOS Mail</span>
+                <span>Write an Email</span>
               </button>
 
               <button
                 onClick={() => scrollToSection('experience')}
                 className="tactile-btn flex items-center gap-2 px-4 py-3 rounded-xl bg-white border-[1.5px] border-[#121212] text-[#121212] text-sm font-bold hover:bg-[#F4F1EA] transition-all"
               >
-                <span>View Selected Builds</span>
+                <span>See My Works</span>
                 <ArrowDownRight size={16} />
               </button>
 
@@ -162,11 +162,11 @@ export default function Hero() {
             {/* Hand-drawn note under CTA with Doodle Sparkle */}
             <div className="flex items-center gap-2 pt-1 text-sm font-hand text-stone-700">
               <DoodleSparkle className="w-4 h-4 text-[#1A1A1A]" strokeColor="#1A1A1A" />
-              <span className="font-bold">Open for Freelance 3D/Web Builds & 7th-Sem Tech Internships</span>
+              <span className="font-bold">Open for freelance website projects &amp; 7th-sem internships</span>
             </div>
           </div>
 
-          {/* Right Column: Tactile Polaroid Photo Card Placeholder */}
+          {/* Right Column: Tactile Polaroid Photo Card */}
           <div className="lg:col-span-5 flex flex-col items-center justify-center relative mt-6 lg:mt-0">
             
             {/* Washi tape on top of polaroid */}
@@ -238,34 +238,34 @@ export default function Hero() {
                   </div>
                 </div>
               ) : (
-                /* Back Side: Tactile 3 Core Pillars */
+                /* Back Side: What I Focus On */
                 <div className="space-y-3 min-h-[340px] flex flex-col justify-between p-2">
                   <div>
                     <div className="flex items-center justify-between border-b border-dashed border-[#121212] pb-2 mb-3">
                       <span className="font-mono text-xs font-bold uppercase tracking-wider text-amber-800">
-                        ⚡ Quick Dossier
+                        ⚡ Quick Summary
                       </span>
                       <span className="text-[10px] font-mono px-2 py-0.5 bg-neutral-100 rounded border border-neutral-300">
-                        Profile NM-28
+                        Naman Mishra
                       </span>
                     </div>
 
                     <h3 className="font-black text-base text-[#121212]">
-                      3 Core Engineering Pillars
+                      How I Help Brands Online
                     </h3>
 
                     <ul className="mt-3 space-y-2.5 text-xs text-[#282828]">
                       <li className="flex items-start gap-2">
                         <CheckCircle2 size={14} className="text-emerald-600 mt-0.5 flex-shrink-0" />
-                        <span><strong>01. 3D & Motion Web:</strong> Three.js, React Three Fiber, and GSAP scroll-driven choreography.</span>
+                        <span><strong>01. Creative Web Design:</strong> Custom layouts, sharp fonts, and designs that fit your brand.</span>
                       </li>
                       <li className="flex items-start gap-2">
                         <CheckCircle2 size={14} className="text-emerald-600 mt-0.5 flex-shrink-0" />
-                        <span><strong>02. Full-Stack Storefronts & UI Systems:</strong> Next.js storefronts, Razorpay checkouts, and Qikink POD pipelines.</span>
+                        <span><strong>02. Smooth Interactions:</strong> Scroll animations, pop-ups, and fast pages that feel great on phones.</span>
                       </li>
                       <li className="flex items-start gap-2">
                         <CheckCircle2 size={14} className="text-emerald-600 mt-0.5 flex-shrink-0" />
-                        <span><strong>03. Electronics, VLSI & Python Tooling:</strong> Cadence Virtuoso, GHDL, MATLAB DSP, and local CLI automation.</span>
+                        <span><strong>03. Customer Trust:</strong> Clear product pages and stores that make visitors feel confident buying.</span>
                       </li>
                     </ul>
                   </div>

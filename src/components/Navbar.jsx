@@ -56,7 +56,7 @@ export default function Navbar() {
                 Naman Mishra
               </span>
               <span className="text-[10px] font-mono font-medium text-[#625E56] hidden sm:block">
-                B.Tech ECE ’28 • Chandigarh, India
+                Creative Web Designer • Chandigarh, India
               </span>
             </div>
           </a>
@@ -65,8 +65,8 @@ export default function Navbar() {
           <nav className="hidden md:flex items-center gap-1 lg:gap-2">
             {[
               { label: 'About', id: 'about' },
-              { label: 'Builds', id: 'experience' },
-              { label: 'Pathway', id: 'credentials' },
+              { label: 'My Works', id: 'experience' },
+              { label: 'Education', id: 'credentials' },
               { label: 'Contact', id: 'contact' },
             ].map((link) => (
               <a
@@ -128,10 +128,10 @@ export default function Navbar() {
             </div>
 
             {[
-              { label: 'About Naman', id: 'about' },
-              { label: 'Builds & Leadership', id: 'experience' },
-              { label: 'Education & Engineering Path', id: 'credentials' },
-              { label: 'Get In Touch (Mail Composer)', id: 'contact' },
+              { label: 'About Me', id: 'about' },
+              { label: 'My Works', id: 'experience' },
+              { label: 'Education & Skills', id: 'credentials' },
+              { label: 'Contact Me', id: 'contact' },
             ].map((link) => (
               <a
                 key={link.id}
